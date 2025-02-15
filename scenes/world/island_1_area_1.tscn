@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://64auyy38xvyj"]
 
-[ext_resource type="PackedScene" uid="uid://bd7xh0wcudbyw" path="res://scenes/path.tscn" id="1_20jvo"]
-[ext_resource type="PackedScene" uid="uid://cjo6ti8e5lb5e" path="res://scenes/fence.tscn" id="2_iqnuj"]
+[ext_resource type="PackedScene" uid="uid://bd7xh0wcudbyw" path="res://scenes/world/path.tscn" id="1_20jvo"]
+[ext_resource type="PackedScene" uid="uid://cjo6ti8e5lb5e" path="res://scenes/world/fence.tscn" id="2_iqnuj"]
 [ext_resource type="ArrayMesh" uid="uid://bg4btdlxbbue5" path="res://assets/models/models_FencePost.res" id="3_gi4i4"]
-[ext_resource type="PackedScene" uid="uid://dnyewt2j2dh3n" path="res://scenes/tree1.tscn" id="4_f5hwv"]
-[ext_resource type="PackedScene" uid="uid://e0iy2vr5jwic" path="res://scenes/tree2.tscn" id="5_p5ans"]
-[ext_resource type="PackedScene" uid="uid://bauc15gbiwsk1" path="res://scenes/house_1.tscn" id="6_sc5yk"]
-[ext_resource type="PackedScene" uid="uid://byha8d5hockfb" path="res://scenes/well.tscn" id="7_37ont"]
+[ext_resource type="PackedScene" uid="uid://dnyewt2j2dh3n" path="res://scenes/world/tree1.tscn" id="4_f5hwv"]
+[ext_resource type="PackedScene" uid="uid://e0iy2vr5jwic" path="res://scenes/world/tree2.tscn" id="5_p5ans"]
+[ext_resource type="PackedScene" uid="uid://bauc15gbiwsk1" path="res://scenes/world/house_1.tscn" id="6_sc5yk"]
+[ext_resource type="PackedScene" uid="uid://byha8d5hockfb" path="res://scenes/world/well.tscn" id="7_37ont"]
 
 [node name="Area1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.798104, 0, 58.6827)

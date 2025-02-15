@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b5jrjq21cf0j7"]
 
-[ext_resource type="PackedScene" uid="uid://bd7xh0wcudbyw" path="res://scenes/path.tscn" id="1_4ataj"]
-[ext_resource type="PackedScene" uid="uid://cjo6ti8e5lb5e" path="res://scenes/fence.tscn" id="2_bpwva"]
+[ext_resource type="PackedScene" uid="uid://bd7xh0wcudbyw" path="res://scenes/world/path.tscn" id="1_4ataj"]
+[ext_resource type="PackedScene" uid="uid://cjo6ti8e5lb5e" path="res://scenes/world/fence.tscn" id="2_bpwva"]
 [ext_resource type="ArrayMesh" uid="uid://bg4btdlxbbue5" path="res://assets/models/models_FencePost.res" id="3_14eu2"]
-[ext_resource type="PackedScene" uid="uid://e0iy2vr5jwic" path="res://scenes/tree2.tscn" id="4_v0jar"]
-[ext_resource type="PackedScene" uid="uid://bauc15gbiwsk1" path="res://scenes/house_1.tscn" id="5_ulpm2"]
+[ext_resource type="PackedScene" uid="uid://e0iy2vr5jwic" path="res://scenes/world/tree2.tscn" id="4_v0jar"]
+[ext_resource type="PackedScene" uid="uid://bauc15gbiwsk1" path="res://scenes/world/house_1.tscn" id="5_ulpm2"]
 
 [node name="Area2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 56)

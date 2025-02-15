@@ -1,5 +1,8 @@
 extends Node3D
 
+@export var broom_name : String
+@export var broom_music : AudioStream
+
 
 @export var maximum_speed : float = 10.0
 @export var rotation_speed : float = 2.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://djqs8cxxs7m7c"]
 
-[ext_resource type="PackedScene" uid="uid://b3qlbe0axfym7" path="res://arrow.tscn" id="1_lcrlj"]
-[ext_resource type="Script" path="res://scenes/gate.gd" id="1_ve7w8"]
+[ext_resource type="PackedScene" uid="uid://b3qlbe0axfym7" path="res://scenes/racing/arrow.tscn" id="1_lcrlj"]
+[ext_resource type="Script" path="res://scenes/racing/gate.gd" id="1_ve7w8"]
 [ext_resource type="AudioStream" uid="uid://bb0y8lgnqa2eb" path="res://assets/sounds/gate.wav" id="3_li6kd"]
 
 [sub_resource type="Shader" id="Shader_3t5em"]

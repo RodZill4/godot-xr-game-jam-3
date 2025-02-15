@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://vjcadter1kt3"]
 
-[ext_resource type="Script" path="res://score_board.gd" id="1_1qtgl"]
+[ext_resource type="Script" path="res://scenes/racing/score_board.gd" id="1_1qtgl"]
 [ext_resource type="ArrayMesh" uid="uid://dy3sunh260vj" path="res://assets/models/models_BulletinBoard.res" id="1_05wbt"]
 
 [node name="ScoreBoard" type="Node3D"]

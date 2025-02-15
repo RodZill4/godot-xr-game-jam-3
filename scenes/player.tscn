@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfpxva8dtwiqo"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_xr21j"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_32lh2"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_ag7f7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g6y8c"]
+radius = 0.6
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 2049
+script = ExtResource("1_xr21j")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="XR" type="Node3D" parent="Pivot"]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="Pivot/XR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="Pivot/XR/XROrigin3D"]
+current = true
+
+[node name="LeftHand" type="XRController3D" parent="Pivot/XR/XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="Pivot/XR/XROrigin3D/LeftHand" instance=ExtResource("2_32lh2")]
+
+[node name="FPS" type="Label3D" parent="Pivot/XR/XROrigin3D/LeftHand/LeftHand"]
+transform = Transform3D(-1.32121e-08, -1.5299e-08, -0.175, -1.5299e-08, -0.175, 1.5299e-08, -0.175, 1.5299e-08, 1.32121e-08, -0.06, -0.05, 0.17)
+outline_size = 8
+
+[node name="RightHand" type="XRController3D" parent="Pivot/XR/XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="Pivot/XR/XROrigin3D/RightHand" instance=ExtResource("3_ag7f7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0708213, 0)
+shape = SubResource("SphereShape3D_g6y8c")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]

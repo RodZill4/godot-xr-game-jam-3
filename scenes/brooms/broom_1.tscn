@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqtv1jfsgscpa"]
+[gd_scene load_steps=4 format=3 uid="uid://cqtv1jfsgscpa"]
 
 [ext_resource type="Script" path="res://scenes/brooms/broom.gd" id="1_7d5uv"]
+[ext_resource type="AudioStream" uid="uid://cw58mx5fyrv0f" path="res://assets/music/Sketchbook 2024-12-15.ogg" id="2_nr2cf"]
 [ext_resource type="ArrayMesh" uid="uid://bb7d0kmndu0jf" path="res://assets/models/models_Broom1.res" id="2_oj8mg"]
 
 [node name="Broom" type="Node3D"]
 script = ExtResource("1_7d5uv")
+broom_name = "ToddleStick"
+broom_music = ExtResource("2_nr2cf")
+rotation_speed = 4.0
+lean_amount = 0.02
 
 [node name="Visual" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 rotation_order = 0
 mesh = ExtResource("2_oj8mg")
 skeleton = NodePath("../XR")

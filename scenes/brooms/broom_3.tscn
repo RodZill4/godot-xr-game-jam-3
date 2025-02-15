@@ -1,29 +1,86 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnqmle10lwnfn"]
+[gd_scene load_steps=9 format=3 uid="uid://dnqmle10lwnfn"]
 
 [ext_resource type="Script" path="res://scenes/brooms/broom.gd" id="1_qp4dw"]
 [ext_resource type="ArrayMesh" uid="uid://61m38ooi30jj" path="res://assets/models/models_Broom3.res" id="2_5asnr"]
+[ext_resource type="AudioStream" uid="uid://cfpfx0onfs2pk" path="res://assets/music/Sketchbook 2024-12-21.ogg" id="2_r2pne"]
 [ext_resource type="ArrayMesh" uid="uid://de6o0yiosu1xx" path="res://assets/models/models_Eye.res" id="3_b267o"]
+[ext_resource type="Script" path="res://scenes/brooms/eye.gd" id="3_tpp20"]
 [ext_resource type="ArrayMesh" uid="uid://bjvai1c8l5vbq" path="res://assets/models/models_Eyelid.res" id="4_qxpcs"]
+
+[sub_resource type="Animation" id="Animation_3semq"]
+resource_name = "blink"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Eyelid1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.698132), Vector3(0, 0, 0), Vector3(0, 0, 0.698132)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Eyelid2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -3.83972), Vector3(0, 0, -3.14159), Vector3(0, 0, -3.83972)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cy0ho"]
+_data = {
+"blink": SubResource("Animation_3semq")
+}
 
 [node name="Broom" type="Node3D"]
 script = ExtResource("1_qp4dw")
+broom_name = "StareBorne"
+broom_music = ExtResource("2_r2pne")
+maximum_speed = 40.0
+rotation_speed = 5.0
+vertical_speed = 2.0
+decay = 300.0
+lean_amount = 0.01
 
 [node name="Visual" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 rotation_order = 0
 mesh = ExtResource("2_5asnr")
 skeleton = NodePath("../XR")
 
-[node name="Eye" type="MeshInstance3D" parent="Visual"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00758892, 0.725799, -0.00633644)
+[node name="Eye" type="Node3D" parent="Visual"]
+transform = Transform3D(0.862151, 0.506651, 0, -0.506651, 0.862151, 0, 0, 0, 1, -0.00758892, 0.725799, -0.00633644)
+script = ExtResource("3_tpp20")
+
+[node name="Eye" type="MeshInstance3D" parent="Visual/Eye"]
+transform = Transform3D(0.99, 0, 0, 0, 0.99, 0, 0, 0, 0.99, 0, 0, 0)
 mesh = ExtResource("3_b267o")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
 [node name="Eyelid1" type="MeshInstance3D" parent="Visual/Eye"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.766044, -0.642788, 0, 0.642788, 0.766044, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("4_qxpcs")
 skeleton = NodePath("../../..")
 
 [node name="Eyelid2" type="MeshInstance3D" parent="Visual/Eye"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(-0.766045, -0.642788, 0, 0.642788, -0.766045, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("4_qxpcs")
 skeleton = NodePath("../../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual/Eye"]
+root_node = NodePath("../Eye")
+libraries = {
+"": SubResource("AnimationLibrary_cy0ho")
+}
+autoplay = "blink"
+speed_scale = 1.078
+
+[connection signal="animation_finished" from="Visual/Eye/AnimationPlayer" to="Visual/Eye" method="_on_animation_player_animation_finished"]

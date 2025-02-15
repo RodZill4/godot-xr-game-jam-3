@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://co3p2gvhunhnc"]
+[gd_scene load_steps=4 format=3 uid="uid://co3p2gvhunhnc"]
 
 [ext_resource type="Script" path="res://scenes/brooms/broom.gd" id="1_x4iio"]
+[ext_resource type="AudioStream" uid="uid://dkdu634pjxyr4" path="res://assets/music/Sketchbook 2024-12-26.ogg" id="2_gui10"]
 [ext_resource type="ArrayMesh" uid="uid://dawc6xykk8nd" path="res://assets/models/models_Broom2.res" id="2_rkpv3"]
 
 [node name="Broom" type="Node3D"]
 script = ExtResource("1_x4iio")
+broom_name = "HagCeler 8"
+broom_music = ExtResource("2_gui10")
+maximum_speed = 25.0
+vertical_speed = 4.0
+decay = 250.0
+lean_amount = 0.02
 
 [node name="Visual" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 rotation_order = 0
 mesh = ExtResource("2_rkpv3")
 skeleton = NodePath("../XR")

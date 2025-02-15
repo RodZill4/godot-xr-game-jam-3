@@ -4,14 +4,18 @@ extends CharacterBody3D
 @onready var broom = null
 
 func _ready():
-	set_broom(load("res://scenes/brooms/broom_2.tscn").instantiate())
+	set_broom(load("res://scenes/brooms/broom_1.tscn").instantiate())
 
 func set_broom(b):
 	if broom:
 		broom.queue_free()
-	$Pivot.add_child(b)
 	broom = b
-	broom.set_hand($Pivot/XR/XROrigin3D/RightHand)
+	if b:
+		$Pivot.add_child(b)
+		broom.set_hand($Pivot/XR/XROrigin3D/RightHand)
+		$MusicPlayer.stop()
+		$MusicPlayer.stream = broom.broom_music
+		$MusicPlayer.play()
 
 func _process(delta : float):
 	var speed_command : float = $Pivot/XR/XROrigin3D/RightHand.get_float("trigger")
@@ -23,4 +27,4 @@ func _process(delta : float):
 	move_and_slide()
 	rotation.y += delta*broom.rotation_speed*rotation_command
 	$Pivot.rotation.z = broom.lean_amount*broom.rotation.z*velocity.length()
-	$Pivot/XR/XROrigin3D/LeftHand/MeshInstance3D/Label3D.text = str(Engine.get_frames_per_second())
+	$Pivot/XR/XROrigin3D/LeftHand/FPS.text = str(Engine.get_frames_per_second())+" FPS"

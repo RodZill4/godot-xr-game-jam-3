@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpe1cc3jh02aa"]
+
+[ext_resource type="ArrayMesh" uid="uid://8vyjt651p7gf" path="res://assets/models/models_BroomDisplay.res" id="1_8w6oe"]
+[ext_resource type="Script" path="res://scenes/brooms/broom_change.gd" id="1_vfame"]
+[ext_resource type="PackedScene" uid="uid://cqtv1jfsgscpa" path="res://scenes/brooms/broom_1.tscn" id="2_hfw8m"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jwexq"]
+radius = 0.244211
+height = 1.55377
+
+[sub_resource type="Animation" id="Animation_hdnbd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance/BroomPosition:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.14157, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eajnr"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance/BroomPosition:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.14157, 0), Vector3(0, 1.31291, 0), Vector3(0, 1.14157, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1w0c"]
+_data = {
+"RESET": SubResource("Animation_hdnbd"),
+"idle": SubResource("Animation_eajnr")
+}
+
+[node name="BroomChange" type="Area3D"]
+collision_layer = 0
+collision_mask = 2048
+script = ExtResource("1_vfame")
+broom_scene = ExtResource("2_hfw8m")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0692612, 1.04709, 0)
+shape = SubResource("CapsuleShape3D_jwexq")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142646, 0)
+mesh = ExtResource("1_8w6oe")
+
+[node name="BroomName" type="Label3D" parent="MeshInstance"]
+transform = Transform3D(-3.73732e-08, 0.599352, -0.609756, 0, 0.609756, 0.599352, 0.855, 2.61985e-08, -2.66533e-08, -0.424652, 0.0242237, -1.85621e-08)
+
+[node name="BroomPosition" type="Node3D" parent="MeshInstance"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.14157, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l1w0c")
+}
+autoplay = "idle"
+speed_scale = 0.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
