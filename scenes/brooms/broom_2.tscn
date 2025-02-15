@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://co3p2gvhunhnc"]
+
+[ext_resource type="Script" path="res://scenes/brooms/broom.gd" id="1_x4iio"]
+[ext_resource type="ArrayMesh" uid="uid://dawc6xykk8nd" path="res://assets/models/models_Broom2.res" id="2_rkpv3"]
+
+[node name="Broom" type="Node3D"]
+script = ExtResource("1_x4iio")
+
+[node name="Visual" type="MeshInstance3D" parent="."]
+rotation_order = 0
+mesh = ExtResource("2_rkpv3")
+skeleton = NodePath("../XR")

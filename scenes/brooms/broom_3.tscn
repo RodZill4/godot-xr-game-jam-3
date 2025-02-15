@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnqmle10lwnfn"]
+
+[ext_resource type="Script" path="res://scenes/brooms/broom.gd" id="1_qp4dw"]
+[ext_resource type="ArrayMesh" uid="uid://61m38ooi30jj" path="res://assets/models/models_Broom3.res" id="2_5asnr"]
+[ext_resource type="ArrayMesh" uid="uid://de6o0yiosu1xx" path="res://assets/models/models_Eye.res" id="3_b267o"]
+[ext_resource type="ArrayMesh" uid="uid://bjvai1c8l5vbq" path="res://assets/models/models_Eyelid.res" id="4_qxpcs"]
+
+[node name="Broom" type="Node3D"]
+script = ExtResource("1_qp4dw")
+
+[node name="Visual" type="MeshInstance3D" parent="."]
+rotation_order = 0
+mesh = ExtResource("2_5asnr")
+skeleton = NodePath("../XR")
+
+[node name="Eye" type="MeshInstance3D" parent="Visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00758892, 0.725799, -0.00633644)
+mesh = ExtResource("3_b267o")
+skeleton = NodePath("../..")
+
+[node name="Eyelid1" type="MeshInstance3D" parent="Visual/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("4_qxpcs")
+skeleton = NodePath("../../..")
+
+[node name="Eyelid2" type="MeshInstance3D" parent="Visual/Eye"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("4_qxpcs")
+skeleton = NodePath("../../..")

@@ -1,0 +1,117 @@
+[gd_scene load_steps=17 format=3 uid="uid://bauc15gbiwsk1"]
+
+[ext_resource type="ArrayMesh" uid="uid://cwfpb7unok5ra" path="res://assets/models/models_House1.res" id="1_jbdeu"]
+[ext_resource type="ArrayMesh" uid="uid://b1n3gq6m7cg4u" path="res://assets/models/models_Door.res" id="2_pmb0d"]
+[ext_resource type="ArrayMesh" uid="uid://cw121j2kp0ojr" path="res://assets/models/models_WindowRound.res" id="3_wvx01"]
+[ext_resource type="ArrayMesh" uid="uid://ce5t14562bgk4" path="res://assets/models/models_WindowSquare.res" id="4_rimhx"]
+[ext_resource type="ArrayMesh" uid="uid://b4eexcj7ua7r8" path="res://assets/models/models_Chimney.res" id="5_8r3j5"]
+[ext_resource type="Texture2D" uid="uid://bfvyt367rm6rv" path="res://assets/smoke.png" id="6_io3gr"]
+
+[sub_resource type="Curve" id="Curve_us22m"]
+_data = [Vector2(0, 0.366762), 0.0, 3.23241, 0, 0, Vector2(0.112676, 1), 0.0, 0.0, 0, 0, Vector2(0.346154, 1), -0.351648, -0.351648, 0, 0, Vector2(1, 0), -0.0831169, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_36kq2"]
+curve = SubResource("Curve_us22m")
+
+[sub_resource type="Curve" id="Curve_gun7c"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.32468, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_v7gx2"]
+curve = SubResource("Curve_gun7c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tu2vx"]
+spread = 180.0
+flatness = 0.173
+initial_velocity_min = 0.2
+initial_velocity_max = 0.2
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+gravity = Vector3(0, 0.4, 0)
+scale_min = 0.0
+scale_curve = SubResource("CurveTexture_v7gx2")
+alpha_curve = SubResource("CurveTexture_36kq2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tmhc"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("6_io3gr")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_p8dtx"]
+material = SubResource("StandardMaterial3D_8tmhc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_mcs85"]
+material = SubResource("StandardMaterial3D_8tmhc")
+
+[sub_resource type="Gradient" id="Gradient_jkqlo"]
+offsets = PackedFloat32Array(0, 0.550676, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1uuob"]
+size = Vector3(5.53979, 5.59546, 5.96878)
+
+[node name="House1" type="StaticBody3D"]
+
+[node name="House" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0482007, 0)
+mesh = ExtResource("1_jbdeu")
+skeleton = NodePath("../../..")
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999084, -0.0427824, 0, 0.0427824, 0.999084, 0, 0, 0, 1, -2.01657, -0.0562154, -0.00768483)
+mesh = ExtResource("2_pmb0d")
+skeleton = NodePath("../../..")
+
+[node name="Window1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0, 1, -2.10631, 4.13336, -0.148606)
+mesh = ExtResource("3_wvx01")
+skeleton = NodePath("../../..")
+
+[node name="Window2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -4.65882e-22, 1, 0.116255, 0.993219, 5.08166e-09, -0.993219, 0.116255, -4.3415e-08, -0.0465003, 1.94173, 2.35303)
+mesh = ExtResource("4_rimhx")
+skeleton = NodePath("../../..")
+
+[node name="Chimney" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02217, 4.61118, -1.6173)
+mesh = ExtResource("5_8r3j5")
+
+[node name="Smoke" type="GPUParticles3D" parent="Chimney"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00524139, 1.04982, 0)
+visible = false
+emitting = false
+amount = 3
+lifetime = 2.3
+randomness = 1.0
+visibility_aabb = AABB(-0.7, -0.5, -0.7, 1.4, 1.5, 1.4)
+trail_lifetime = 2.5
+process_material = SubResource("ParticleProcessMaterial_tu2vx")
+draw_pass_1 = SubResource("QuadMesh_p8dtx")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Chimney"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.898991, 0)
+visible = false
+emitting = false
+amount = 6
+lifetime = 3.0
+visibility_aabb = AABB(-0.7, -0.5, -0.7, 1.4, 1.5, 1.4)
+mesh = SubResource("QuadMesh_mcs85")
+particle_flag_align_y = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0.2, 0)
+initial_velocity_max = 0.1
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+color_ramp = SubResource("Gradient_jkqlo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.244263, 2.2112, -0.0389557)
+shape = SubResource("BoxShape3D_1uuob")

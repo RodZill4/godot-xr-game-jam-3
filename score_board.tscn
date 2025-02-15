@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://vjcadter1kt3"]
+
+[ext_resource type="Script" path="res://score_board.gd" id="1_1qtgl"]
+[ext_resource type="ArrayMesh" uid="uid://dy3sunh260vj" path="res://assets/models/models_BulletinBoard.res" id="1_05wbt"]
+
+[node name="ScoreBoard" type="Node3D"]
+script = ExtResource("1_1qtgl")
+
+[node name="ModelsBulletinBoard" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_05wbt")
+
+[node name="Names" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75104, 3.63165, 0.109634)
+text = "High scores
+"
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Scores" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436049, 3.63165, 0.109634)
+text = "High scores
+"
+horizontal_alignment = 0
+vertical_alignment = 0

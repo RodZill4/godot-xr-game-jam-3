@@ -1,0 +1,212 @@
+[gd_scene load_steps=8 format=3 uid="uid://64auyy38xvyj"]
+
+[ext_resource type="PackedScene" uid="uid://bd7xh0wcudbyw" path="res://scenes/path.tscn" id="1_20jvo"]
+[ext_resource type="PackedScene" uid="uid://cjo6ti8e5lb5e" path="res://scenes/fence.tscn" id="2_iqnuj"]
+[ext_resource type="ArrayMesh" uid="uid://bg4btdlxbbue5" path="res://assets/models/models_FencePost.res" id="3_gi4i4"]
+[ext_resource type="PackedScene" uid="uid://dnyewt2j2dh3n" path="res://scenes/tree1.tscn" id="4_f5hwv"]
+[ext_resource type="PackedScene" uid="uid://e0iy2vr5jwic" path="res://scenes/tree2.tscn" id="5_p5ans"]
+[ext_resource type="PackedScene" uid="uid://bauc15gbiwsk1" path="res://scenes/house_1.tscn" id="6_sc5yk"]
+[ext_resource type="PackedScene" uid="uid://byha8d5hockfb" path="res://scenes/well.tscn" id="7_37ont"]
+
+[node name="Area1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.798104, 0, 58.6827)
+
+[node name="Paths" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124347, -18.6597)
+
+[node name="Path1" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(-0.142283, 0, 0.989826, 0, 1, 0, -0.989826, 0, -0.142283, 0, 0, -1.95759)
+
+[node name="Path2" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(0.341938, 0, -0.939722, 0, 1, 0, 0.939722, 0, 0.341938, -10.1381, 0, 1.09213)
+
+[node name="Path3" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(-0.661181, 0, 0.750226, 0, 1, 0, -0.750226, 0, -0.661181, -19.1856, 0, 6.34427)
+
+[node name="Path4" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(0.800784, 0, -0.598954, 0, 1, 0, 0.598954, 0, 0.800784, -25.9975, 0, 14.4486)
+
+[node name="Path5" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(0.992868, 0, 0.119219, 0, 1, 0, -0.119219, 0, 0.992868, -24.4356, 0, 32.514)
+
+[node name="Path6" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(-0.947423, 0, -0.319985, 0, 1, 0, 0.319985, 0, -0.947423, -27.2486, 0, 22.3077)
+
+[node name="Path7" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(-0.686846, 0, -0.726802, 0, 1, 0, 0.726802, 0, -0.686846, -20.4991, 0, 40.4664)
+
+[node name="Path8" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(0.52348, 0, 0.852038, 0, 1, 0, -0.852038, 0, 0.52348, -11.8077, 0, 46.5113)
+
+[node name="Path9" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(-0.176586, 0, -0.984285, 0, 1, 0, 0.984285, 0, -0.176586, -2.06915, 0, 50.3328)
+
+[node name="Path10" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(-0.0286893, 0, 0.999588, 0, 1, 0, -0.999588, 0, -0.0286893, 8.51355, 0, 50.63)
+
+[node name="Path11" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(-0.45851, 0, 0.888689, 0, 1, 0, -0.888689, 0, -0.45851, 26.1154, 0, 41.2752)
+
+[node name="Path12" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(0.630757, 0, -0.77598, 0, 1, 0, 0.77598, 0, 0.630757, 17.5346, 0, 47.476)
+
+[node name="Path13" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(0.970004, 0, -0.24309, 0, 1, 0, 0.24309, 0, 0.970004, 32.5688, 0, 34.1096)
+
+[node name="Path14" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(-0.999226, 0, 0.0393295, 0, 1, 0, -0.0393295, 0, -0.999226, 33.5847, 0, 23.5716)
+
+[node name="Path15" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(0.944714, 0, 0.327894, 0, 1, 0, -0.327894, 0, 0.944714, 32.1493, 0, 13.2091)
+
+[node name="Path16" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(-0.857563, 0, -0.51438, 0, 1, 0, 0.51438, 0, -0.857563, 27.2276, 0, 3.83579)
+
+[node name="Path17" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(-0.26559, 0, -0.964086, 0, 1, 0, 0.964086, 0, -0.26559, 9.91586, 0, -1.5587)
+
+[node name="Path18" parent="Paths" instance=ExtResource("1_20jvo")]
+transform = Transform3D(0.062564, 0, 0.998041, 0, 1, 0, -0.998041, 0, 0.062564, 20.4274, 0, -0.297882)
+
+[node name="Fences" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0999298, -18.6597)
+
+[node name="Fence1" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.186284, 0, -0.982496, 0, 1, 0, 0.982496, 0, 0.186284, 0.827562, 0, 1.97456)
+
+[node name="Post" type="MeshInstance3D" parent="Fences/Fence1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0605273, 0, 4.12749)
+mesh = ExtResource("3_gi4i4")
+
+[node name="Fence2" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.263301, 0, -0.964714, 0, 1, 0, 0.964714, 0, -0.263301, 9.16039, 0, 2.42514)
+
+[node name="Fence3" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.00650999, 0, -0.999979, 0, 1, 0, 0.999979, 0, 0.00650999, 17.6281, 0, 3.69623)
+
+[node name="Fence4" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.999402, 0, 0.0345856, 0, 1, 0, -0.0345856, 0, -0.999402, 6.87472, 0, 5.62503)
+
+[node name="Fence18" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.975196, 0, 0.221344, 0, 1, 0, -0.221344, 0, -0.975196, 5.68397, 0, 14.0653)
+
+[node name="Fence19" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.025008, 0, 0.999687, 0, 1, 0, -0.999687, 0, -0.025008, 25.3305, 0, 23.3405)
+
+[node name="Fence20" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.38436, 0, 0.923183, 0, 1, 0, -0.923183, 0, 0.38436, 17.1195, 0, 21.7104)
+
+[node name="Fence21" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.179352, 0, 0.983785, 0, 1, 0, -0.983785, 0, 0.179352, 8.95558, 0, 19.1411)
+
+[node name="Fence22" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.803046, 0, 0.595917, 0, 1, 0, -0.595917, 0, 0.803046, 9.57557, 0, 41.5779)
+
+[node name="Fence23" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.976141, 0, 0.217138, 0, 1, 0, -0.217138, 0, 0.976141, 6.18188, 0, 33.9254)
+
+[node name="Fence24" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.942839, 0, 0.333247, 0, 1, 0, -0.333247, 0, 0.942839, 3.94486, 0, 25.3495)
+
+[node name="Fence25" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.856826, 0, -0.515606, 0, 1, 0, 0.515606, 0, 0.856826, -12.7715, 0, 35.9777)
+
+[node name="Fence26" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.572504, 0, -0.819902, 0, 1, 0, 0.819902, 0, 0.572504, -6.98794, 0, 29.9255)
+
+[node name="Fence27" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.733694, 0, -0.67948, 0, 1, 0, 0.67948, 0, 0.733694, -0.437348, 0, 24.4173)
+
+[node name="Fence28" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.0720197, 0, -0.997403, 0, 1, 0, 0.997403, 0, 0.0720197, -16.3298, 0, 14.1237)
+
+[node name="Fence29" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.340494, 0, -0.940247, 0, 1, 0, 0.940247, 0, -0.340494, -8.05121, 0, 15.3657)
+
+[node name="Fence30" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.132862, 0, -0.991135, 0, 1, 0, 0.991135, 0, -0.132862, 0.224562, 0, 17.548)
+
+[node name="Fence5" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.707267, 0, -0.706946, 0, 1, 0, 0.706946, 0, -0.707267, 24.9019, 0, 6.71043)
+
+[node name="Fence6" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.999993, 0, -0.0036127, 0, 1, 0, 0.0036127, 0, -0.999993, 29.0026, 0, 16.9453)
+
+[node name="Post" type="MeshInstance3D" parent="Fences/Fence6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0605273, 0, 4.12749)
+mesh = ExtResource("3_gi4i4")
+
+[node name="Fence7" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.991009, 0, -0.133796, 0, 1, 0, 0.133796, 0, -0.991009, 29.4771, 0, 25.5195)
+
+[node name="Fence8" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.890626, 0, 0.454737, 0, 1, 0, -0.454737, 0, -0.890626, 28.0198, 0, 33.5514)
+
+[node name="Fence9" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.544654, 0, 0.838661, 0, 1, 0, -0.838661, 0, -0.544654, 19.8523, 0, 41.7868)
+
+[node name="Post" type="MeshInstance3D" parent="Fences/Fence9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0605273, 0, 4.12749)
+mesh = ExtResource("3_gi4i4")
+
+[node name="Fence10" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.249704, 0, 0.968322, 0, 1, 0, -0.968322, 0, -0.249704, 12.0533, 0, 45.0826)
+
+[node name="Fence11" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(-0.164032, 0, 0.986455, 0, 1, 0, -0.986455, 0, -0.164032, 3.59887, 0, 46.7562)
+
+[node name="Fence12" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.476714, 0, 0.879058, 0, 1, 0, -0.879058, 0, 0.476714, -7.73691, 0, 44.4787)
+
+[node name="Post" type="MeshInstance3D" parent="Fences/Fence12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0605273, 0, 4.12749)
+mesh = ExtResource("3_gi4i4")
+
+[node name="Fence13" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.628452, 0, 0.777848, 0, 1, 0, -0.777848, 0, 0.628452, -14.8282, 0, 39.6476)
+
+[node name="Fence14" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.961727, 0, 0.274009, 0, 1, 0, -0.274009, 0, 0.961727, -19.2648, 0, 32.8167)
+
+[node name="Fence15" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.999752, 0, 0.0222857, 0, 1, 0, -0.0222857, 0, 0.999752, -21.2044, 0, 20.47)
+
+[node name="Post" type="MeshInstance3D" parent="Fences/Fence15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0605273, 0, 4.12749)
+mesh = ExtResource("3_gi4i4")
+
+[node name="Fence16" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.868493, 0, -0.495701, 0, 1, 0, 0.495701, 0, 0.868493, -19.094, 0, 12.462)
+
+[node name="Fence17" parent="Fences" instance=ExtResource("2_iqnuj")]
+transform = Transform3D(0.385584, 0, -0.922673, 0, 1, 0, 0.922673, 0, 0.385584, -13.0321, 0, 7.17277)
+
+[node name="Tree1" parent="." instance=ExtResource("4_f5hwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3923, 1.90735e-06, -6.61424)
+
+[node name="Tree3" parent="." instance=ExtResource("4_f5hwv")]
+transform = Transform3D(-0.828676, 0, -0.559728, 0, 1, 0, 0.559728, 0, -0.828676, -10.0242, 1.90735e-06, 19.9937)
+
+[node name="Tree2" parent="." instance=ExtResource("5_p5ans")]
+transform = Transform3D(-0.666806, 0, 0.745232, 0, 1, 0, -0.745232, 0, -0.666806, 4.93776, 0, 2.19443)
+
+[node name="Houses" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.6597)
+
+[node name="House1" parent="Houses" instance=ExtResource("6_sc5yk")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -3.75283, 0, 9.56823)
+
+[node name="House2" parent="Houses" instance=ExtResource("6_sc5yk")]
+transform = Transform3D(-0.897258, 0, -0.441506, 0, 1, 0, 0.441506, 0, -0.897258, 22.3, 0, 14.1855)
+
+[node name="House3" parent="Houses" instance=ExtResource("6_sc5yk")]
+transform = Transform3D(-0.645258, 0, 0.763965, 0, 1, 0, -0.763965, 0, -0.645258, 21.6718, 0, 33.2939)
+
+[node name="House4" parent="Houses" instance=ExtResource("6_sc5yk")]
+transform = Transform3D(0.166975, 0, 0.985961, 0, 1, 0, -0.985961, 0, 0.166975, -0.634342, 0, 38.9316)
+
+[node name="House5" parent="Houses" instance=ExtResource("6_sc5yk")]
+transform = Transform3D(0.991206, 0, 0.132325, 0, 1, 0, -0.132325, 0, 0.991206, -11.1751, 0, 23.909)
+
+[node name="Well" parent="Houses" instance=ExtResource("7_37ont")]
+transform = Transform3D(-0.470735, 0, 0.882275, 0, 1, 0, -0.882275, 0, -0.470735, 3.81334, 0, 6.89456)

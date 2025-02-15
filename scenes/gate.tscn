@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://djqs8cxxs7m7c"]
+
+[ext_resource type="PackedScene" uid="uid://b3qlbe0axfym7" path="res://arrow.tscn" id="1_lcrlj"]
+[ext_resource type="Script" path="res://scenes/gate.gd" id="1_ve7w8"]
+[ext_resource type="AudioStream" uid="uid://bb0y8lgnqa2eb" path="res://assets/sounds/gate.wav" id="3_li6kd"]
+
+[sub_resource type="Shader" id="Shader_3t5em"]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_disabled, unshaded;
+
+uniform vec3 albedo1 : source_color;
+uniform vec3 albedo2 : source_color;
+
+void fragment() {
+	vec2 base_uv = UV;
+	float mask_y = (1.0-4.0*abs(UV.y-0.25));
+	float mask_x1 = cos(62.8*UV.x+5.0*TIME+11.0*UV.y);
+	float mask_x2 = cos(31.4*UV.x+7.0*TIME+13.0*UV.y);
+
+	ALBEDO = (albedo1*mask_x1*mask_x1+albedo2*mask_x2*mask_x2);
+	ALPHA = mask_y*(mask_x1*mask_x1+mask_x2*mask_x2);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_papfi"]
+render_priority = 0
+shader = SubResource("Shader_3t5em")
+shader_parameter/albedo1 = Color(0.921511, 0.714363, 7.70092e-07, 1)
+shader_parameter/albedo2 = Color(0.972634, 0.490219, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_asro6"]
+material = SubResource("ShaderMaterial_papfi")
+top_radius = 2.0
+bottom_radius = 1.5
+height = 0.001
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="Shader" id="Shader_yaog0"]
+code = "shader_type spatial;
+render_mode blend_add, depth_draw_never, cull_disabled, unshaded;
+
+uniform vec4 albedo : source_color;
+
+void fragment() {
+	vec2 base_uv = UV;
+	vec2 a_uv = abs(UV-vec2(0.5));
+	ALBEDO = albedo.rgb * sqrt(0.5-a_uv.y) * (0.5-a_uv.x) * (1.0+cos(40.0*UV.y+30.0*a_uv.x-5.0*TIME));
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hbocu"]
+render_priority = 0
+shader = SubResource("Shader_yaog0")
+shader_parameter/albedo = Color(1, 0.690196, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2qrqp"]
+material = SubResource("ShaderMaterial_hbocu")
+size = Vector2(4, 8)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k73wv"]
+height = 0.330148
+radius = 1.88238
+
+[node name="Gate" type="Area3D"]
+collision_layer = 0
+collision_mask = 2048
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("1_ve7w8")
+
+[node name="Gate" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_asro6")
+skeleton = NodePath("../..")
+
+[node name="DirectionArrow" type="MeshInstance3D" parent="Gate"]
+transform = Transform3D(-0.00163054, -0.0571225, -0.998366, 0.0284856, 0.997959, -0.0571458, 0.999593, -0.0285322, -4.37923e-08, -2.08016, 9.09266e-08, 0)
+mesh = SubResource("QuadMesh_2qrqp")
+skeleton = NodePath("../../Arrow")
+
+[node name="Arrow" parent="." instance=ExtResource("1_lcrlj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_k73wv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_li6kd")
+
+[node name="TimeLabel" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0.641918, 0.766773, -2.80591e-08, 0.766773, -0.641918, -3.35167e-08, 0, 1.78534, -1.49124)
+visible = false
+modulate = Color(0.96, 0.96, 0, 1)
+font_size = 128
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

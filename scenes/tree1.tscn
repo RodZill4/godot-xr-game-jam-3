@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnyewt2j2dh3n"]
+
+[ext_resource type="ArrayMesh" uid="uid://igr45s477l7o" path="res://assets/models/models_Tree.res" id="1_odxvm"]
+[ext_resource type="Material" uid="uid://d3aptqpy7lh3b" path="res://assets/material.tres" id="2_xsa71"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wv7rw"]
+height = 4.80764
+
+[node name="Tree" type="StaticBody3D"]
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_odxvm")
+surface_material_override/0 = ExtResource("2_xsa71")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0478368, 1.90838, -0.00385809)
+shape = SubResource("CapsuleShape3D_wv7rw")

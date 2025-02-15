@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd7xh0wcudbyw"]
+
+[ext_resource type="ArrayMesh" uid="uid://d3ij0mobbi6tk" path="res://assets/models/models_Path.res" id="1_cvlom"]
+
+[node name="Path" type="Node3D"]
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_cvlom")
+skeleton = NodePath("../../..")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://byha8d5hockfb"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8n6efpql7ft7" path="res://assets/models/models_Well.res" id="1_feuvt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nqhw7"]
+radius = 1.16113
+height = 4.20752
+
+[node name="Well" type="StaticBody3D"]
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_feuvt")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.715335, 0)
+shape = SubResource("CapsuleShape3D_nqhw7")

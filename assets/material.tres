@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d3aptqpy7lh3b"]
+
+[ext_resource type="Shader" path="res://assets/material.gdshader" id="1_jk2px"]
+[ext_resource type="Texture2D" uid="uid://feysc33adv51" path="res://assets/palette.png" id="2_n1jri"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jk2px")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/texture_albedo = ExtResource("2_n1jri")
