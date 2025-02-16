@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqtv1jfsgscpa"]
+[gd_scene load_steps=10 format=3 uid="uid://cqtv1jfsgscpa"]
 
 [ext_resource type="Script" path="res://scenes/brooms/broom.gd" id="1_7d5uv"]
 [ext_resource type="AudioStream" uid="uid://cw58mx5fyrv0f" path="res://assets/music/Sketchbook 2024-12-15.ogg" id="2_nr2cf"]
 [ext_resource type="ArrayMesh" uid="uid://bb7d0kmndu0jf" path="res://assets/models/models_Broom1.res" id="2_oj8mg"]
 [ext_resource type="PackedScene" uid="uid://bddj5m7ull6g0" path="res://addons/godot-xr-tools/interactables/interactable_handle.tscn" id="4_c788e"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_0m1nk"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_tjvfc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3c72"]
 shading_mode = 0
@@ -43,3 +45,9 @@ skeleton = NodePath("../InteractableHandle")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HandleOrigin/InteractableHandle"]
 shape = SubResource("SphereShape3D_8xvrh")
+
+[node name="GrabPointHandLeft" parent="HandleOrigin/InteractableHandle" instance=ExtResource("5_0m1nk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122755, 0.0533546, -0.102046)
+
+[node name="GrabPointHandRight" parent="HandleOrigin/InteractableHandle" instance=ExtResource("6_tjvfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0145083, 0.0528602, -0.102468)
