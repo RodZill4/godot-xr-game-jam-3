@@ -1,12 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://e0iy2vr5jwic"]
+[gd_scene load_steps=7 format=3 uid="uid://e0iy2vr5jwic"]
 
+[ext_resource type="Script" path="res://scenes/world/tree.gd" id="1_h7uut"]
 [ext_resource type="ArrayMesh" uid="uid://dslcctrqinw1n" path="res://assets/models/models_Tree2.res" id="1_yfece"]
+[ext_resource type="AudioStream" uid="uid://dqs3x52tfv552" path="res://assets/sounds/branch moved 8.wav" id="3_hqv30"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fqn0d"]
 radius = 0.932166
 height = 7.34498
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_o0450"]
+radius = 1.43216
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o2p3w"]
+radius = 1.2996
+
 [node name="Tree" type="StaticBody3D"]
+script = ExtResource("1_h7uut")
 
 [node name="MeshInstance" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_yfece")
@@ -14,3 +23,21 @@ mesh = ExtResource("1_yfece")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0478368, 2.66102, -0.00385809)
 shape = SubResource("CapsuleShape3D_fqn0d")
+
+[node name="LeavesArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.16971, 0)
+collision_layer = 0
+collision_mask = 2048
+monitorable = false
+
+[node name="CollisionShape1" type="CollisionShape3D" parent="LeavesArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91178, -0.336352, 1.08536)
+shape = SubResource("SphereShape3D_o0450")
+
+[node name="CollisionShape2" type="CollisionShape3D" parent="LeavesArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57903, 0.253396, -2.32423)
+shape = SubResource("SphereShape3D_o2p3w")
+
+[node name="LeavesSound" type="AudioStreamPlayer3D" parent="LeavesArea"]
+stream = ExtResource("3_hqv30")
+bus = &"SFX"

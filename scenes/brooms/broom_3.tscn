@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnqmle10lwnfn"]
+[gd_scene load_steps=13 format=3 uid="uid://dnqmle10lwnfn"]
 
 [ext_resource type="Script" path="res://scenes/brooms/broom.gd" id="1_qp4dw"]
 [ext_resource type="ArrayMesh" uid="uid://61m38ooi30jj" path="res://assets/models/models_Broom3.res" id="2_5asnr"]
@@ -6,6 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://de6o0yiosu1xx" path="res://assets/models/models_Eye.res" id="3_b267o"]
 [ext_resource type="Script" path="res://scenes/brooms/eye.gd" id="3_tpp20"]
 [ext_resource type="ArrayMesh" uid="uid://bjvai1c8l5vbq" path="res://assets/models/models_Eyelid.res" id="4_qxpcs"]
+[ext_resource type="PackedScene" uid="uid://bddj5m7ull6g0" path="res://addons/godot-xr-tools/interactables/interactable_handle.tscn" id="7_i3evi"]
 
 [sub_resource type="Animation" id="Animation_3semq"]
 resource_name = "blink"
@@ -40,6 +41,20 @@ _data = {
 "blink": SubResource("Animation_3semq")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgwny"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ynik2"]
+material = SubResource("StandardMaterial3D_jgwny")
+radius = 0.05
+height = 0.1
+radial_segments = 6
+rings = 6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_krat5"]
+radius = 0.0386785
+
 [node name="Broom" type="Node3D"]
 script = ExtResource("1_qp4dw")
 broom_name = "StareBorne"
@@ -48,7 +63,7 @@ maximum_speed = 40.0
 rotation_speed = 5.0
 vertical_speed = 2.0
 decay = 300.0
-lean_amount = 0.01
+lean_amount = 0.03
 
 [node name="Visual" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -82,5 +97,18 @@ libraries = {
 }
 autoplay = "blink"
 speed_scale = 1.078
+
+[node name="HandleOrigin" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48691, 0)
+
+[node name="HandleHighlight" type="MeshInstance3D" parent="HandleOrigin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0117343, 0, 0)
+mesh = SubResource("SphereMesh_ynik2")
+skeleton = NodePath("../InteractableHandle")
+
+[node name="InteractableHandle" parent="HandleOrigin" instance=ExtResource("7_i3evi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HandleOrigin/InteractableHandle"]
+shape = SubResource("SphereShape3D_krat5")
 
 [connection signal="animation_finished" from="Visual/Eye/AnimationPlayer" to="Visual/Eye" method="_on_animation_player_animation_finished"]

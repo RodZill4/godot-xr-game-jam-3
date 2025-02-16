@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b00wiwhlu1mbf"]
+[gd_scene load_steps=24 format=3 uid="uid://b00wiwhlu1mbf"]
 
 [ext_resource type="PackedScene" uid="uid://dfpxva8dtwiqo" path="res://scenes/player.tscn" id="1_awy2c"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="4_1x1gt"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5jrjq21cf0j7" path="res://scenes/world/island_1_area_2.tscn" id="7_wgswf"]
 [ext_resource type="PackedScene" uid="uid://e0iy2vr5jwic" path="res://scenes/world/tree2.tscn" id="8_1wa8a"]
 [ext_resource type="PackedScene" uid="uid://dnyewt2j2dh3n" path="res://scenes/world/tree1.tscn" id="9_s5tjf"]
+[ext_resource type="AudioStream" uid="uid://dufxpf7pkkg8g" path="res://assets/sounds/applause.wav" id="10_afnj7"]
 [ext_resource type="PackedScene" uid="uid://t5hxqd5bwnys" path="res://scenes/world/bench.tscn" id="10_kgbd1"]
 [ext_resource type="Script" path="res://scenes/racing/race.gd" id="11_3mknh"]
 [ext_resource type="PackedScene" uid="uid://djqs8cxxs7m7c" path="res://scenes/racing/gate.tscn" id="12_0k2lk"]
@@ -14,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://vjcadter1kt3" path="res://scenes/racing/score_board.tscn" id="13_4mw33"]
 [ext_resource type="PackedScene" uid="uid://co3p2gvhunhnc" path="res://scenes/brooms/broom_2.tscn" id="14_8bkhc"]
 [ext_resource type="PackedScene" uid="uid://dnqmle10lwnfn" path="res://scenes/brooms/broom_3.tscn" id="15_dffm5"]
+[ext_resource type="ArrayMesh" uid="uid://dcsul6d5wdqc3" path="res://assets/models/models_Island2.res" id="15_qopt7"]
+[ext_resource type="PackedScene" uid="uid://d3sloa68hieac" path="res://small_island_1.tscn" id="15_tftlf"]
+[ext_resource type="ArrayMesh" uid="uid://bm4l0dywrdmwd" path="res://assets/models/godot_plushie_Cube_001.res" id="17_67im3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wmaqg"]
 sky_top_color = Color(0.233441, 0.450155, 1, 1)
@@ -33,6 +37,9 @@ sky = SubResource("Sky_x10ci")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_20xbg"]
 data = PackedVector3Array(-0.0686, -60, -43.7574, 20.6976, 0, -104.054, 0, 0, -106.092, -0.0686, -60, -43.7574, 10.8519, -38.172, -50.316, 20.6976, 0, -104.054, 10.8519, -38.172, -50.316, 36.1946, 0, -86.2617, 20.6976, 0, -104.054, 10.8519, -38.172, -50.316, 17.0181, -60, -36.6564, 36.1946, 0, -86.2617, 17.0181, -60, -36.6564, 58.9417, 0, -88.2125, 36.1946, 0, -86.2617, 17.0181, -60, -36.6564, 24.5351, -60, -32.6385, 58.9417, 0, -88.2125, 24.5351, -60, -32.6385, 66.8731, 0, -65.763, 58.9417, 0, -88.2125, 24.5351, -60, -32.6385, 34.5365, -44.8736, -35.4016, 66.8731, 0, -65.763, 34.5365, -44.8736, -35.4016, 88.2125, 0, -58.9417, 66.8731, 0, -65.763, 34.5365, -44.8736, -35.4016, 35.7866, -60, -24.5924, 88.2125, 0, -58.9417, 35.7866, -60, -24.5924, 98.0165, 0, -40.5998, 88.2125, 0, -58.9417, 35.7866, -60, -24.5924, 45.2463, -44.8736, -19.3734, 98.0165, 0, -40.5998, 45.2463, -44.8736, -19.3734, 92.7531, 0, -17.345, 98.0165, 0, -40.5998, 45.2463, -44.8736, -19.3734, 53.644, -38.172, -11.7317, 92.7531, 0, -17.345, 53.644, -38.172, -11.7317, 106.092, 0, 0, 92.7531, 0, -17.345, 53.644, -38.172, -11.7317, 43.0541, -60, -0.6347, 106.092, 0, 0, 43.0541, -60, -0.6347, 92.7531, 0, 19.5518, 106.092, 0, 0, 43.0541, -60, -0.6347, 42.2255, -60, 7.7781, 92.7531, 0, 19.5518, 42.2255, -60, 7.7781, 98.0165, 0, 40.5998, 92.7531, 0, 19.5518, 42.2255, -60, 7.7781, 50.4966, -38.172, 20.2242, 98.0165, 0, 40.5998, 50.4966, -38.172, 20.2242, 78.6333, 0, 53.6399, 98.0165, 0, 40.5998, 50.4966, -38.172, 20.2242, 35.7866, -60, 23.3229, 78.6333, 0, 53.6399, 35.7866, -60, 23.3229, 66.8731, 0, 67.9697, 78.6333, 0, 53.6399, 35.7866, -60, 23.3229, 30.4238, -60, 29.8576, 66.8731, 0, 67.9697, 30.4238, -60, 29.8576, 58.9417, 0, 88.2125, 66.8731, 0, 67.9697, 30.4238, -60, 29.8576, 27.0498, -44.8736, 40.6122, 58.9417, 0, 88.2125, 27.0498, -44.8736, 40.6122, 36.1946, 0, 88.4684, 58.9417, 0, 88.2125, 27.0498, -44.8736, 40.6122, 16.4338, -60, 39.2054, 36.1946, 0, 88.4684, 16.4338, -60, 39.2054, 20.6976, 0, 104.054, 36.1946, 0, 88.4684, 16.4338, -60, 39.2054, 8.3443, -60, 41.6593, 20.6976, 0, 104.054, 8.3443, -60, 41.6593, 0, 0, 106.092, 20.6976, 0, 104.054, 8.3443, -60, 41.6593, -0.602, -38.172, 54.3672, 0, 0, 106.092, -0.602, -38.172, 54.3672, -18.4416, 0, 93.8496, 0, 0, 106.092, -0.602, -38.172, 54.3672, -8.4814, -60, 41.6593, -18.4416, 0, 93.8496, -8.4814, -60, 41.6593, -40.5998, 0, 98.0165, -18.4416, 0, 93.8496, -8.4814, -60, 41.6593, -16.5709, -60, 39.2054, -40.5998, 0, 98.0165, -16.5709, -60, 39.2054, -52.5297, 0, 79.7299, -40.5998, 0, 98.0165, -16.5709, -60, 39.2054, -27.56, -44.8736, 45.7037, -52.5297, 0, 79.7299, -27.56, -44.8736, 45.7037, -66.8595, 0, 67.9697, -52.5297, 0, 79.7299, -27.56, -44.8736, 45.7037, -30.3649, -60, 34.2573, -66.8595, 0, 67.9697, -30.3649, -60, 34.2573, -78.6197, 0, 53.6399, -66.8595, 0, 67.9697, -30.3649, -60, 34.2573, -35.9237, -60, 23.3229, -78.6197, 0, 53.6399, -35.9237, -60, 23.3229, -98.0165, 0, 40.5998, -78.6197, 0, 53.6399, -35.9237, -60, 23.3229, -51.7006, -38.172, 20.2242, -98.0165, 0, 40.5998, -51.7006, -38.172, 20.2242, -104.054, 0, 20.6976, -98.0165, 0, 40.5998, -51.7006, -38.172, 20.2242, -42.3626, -60, 7.7781, -104.054, 0, 20.6976, -42.3626, -60, 7.7781, -94.5565, 0, 1.1034, -104.054, 0, 20.6976, -42.3626, -60, 7.7781, -43.1912, -60, -0.6347, -94.5565, 0, 1.1034, -43.1912, -60, -0.6347, -104.054, 0, -20.6976, -94.5565, 0, 1.1034, -43.1912, -60, -0.6347, -54.848, -38.172, -11.7317, -104.054, 0, -20.6976, -54.848, -38.172, -11.7317, -87.3583, 0, -35.0844, -104.054, 0, -20.6976, -54.848, -38.172, -11.7317, -39.9087, -60, -17.1371, -87.3583, 0, -35.0844, -39.9087, -60, -17.1371, -88.2125, 0, -58.9417, -87.3583, 0, -35.0844, -39.9087, -60, -17.1371, -41.4772, -44.8736, -27.9149, -88.2125, 0, -58.9417, -41.4772, -44.8736, -27.9149, -75.0186, 0, -75.0186, -88.2125, 0, -58.9417, -41.4772, -44.8736, -27.9149, -30.5609, -60, -31.1271, -75.0186, 0, -75.0186, -30.5609, -60, -31.1271, -52.5297, 0, -77.5231, -75.0186, 0, -75.0186, -30.5609, -60, -31.1271, -24.0262, -60, -36.4899, -52.5297, 0, -77.5231, -24.0262, -60, -36.4899, -40.5998, 0, -98.0165, -52.5297, 0, -77.5231, -24.0262, -60, -36.4899, -19.3048, -44.8736, -46.1113, -40.5998, 0, -98.0165, 36.1946, 0, -86.2617, 0, 0, -106.092, 20.6976, 0, -104.054, -18.4416, 0, -91.6429, -52.5297, 0, -77.5231, -40.5998, 0, -98.0165, 36.1946, 0, -86.2617, -18.4416, 0, -91.6429, 0, 0, -106.092, 66.8731, 0, -65.763, 36.1946, 0, -86.2617, 58.9417, 0, -88.2125, 98.0165, 0, -40.5998, 66.8731, 0, -65.763, 88.2125, 0, -58.9417, 92.7531, 0, 19.5518, 92.7531, 0, -17.345, 106.092, 0, 0, 92.7531, 0, -17.345, 66.8731, 0, -65.763, 98.0165, 0, -40.5998, 66.8731, 0, -65.763, -18.4416, 0, -91.6429, 36.1946, 0, -86.2617, -52.5297, 0, -77.5231, -88.2125, 0, -58.9417, -75.0186, 0, -75.0186, 66.8731, 0, -65.763, -52.5297, 0, -77.5231, -18.4416, 0, -91.6429, 92.7531, 0, 19.5518, 66.8731, 0, -65.763, 92.7531, 0, -17.345, 78.6333, 0, 53.6399, 92.7531, 0, 19.5518, 98.0165, 0, 40.5998, 36.1946, 0, 88.4684, 66.8731, 0, 67.9697, 58.9417, 0, 88.2125, 66.8731, 0, 67.9697, 92.7531, 0, 19.5518, 78.6333, 0, 53.6399, 92.7531, 0, 19.5518, -52.5297, 0, -77.5231, 66.8731, 0, -65.763, -52.5297, 0, -77.5231, -87.3583, 0, -35.0844, -88.2125, 0, -58.9417, -87.3583, 0, -35.0844, -94.5565, 0, 1.1034, -104.054, 0, -20.6976, -94.5565, 0, 1.1034, -98.0165, 0, 40.5998, -104.054, 0, 20.6976, -78.6197, 0, 53.6399, -52.5297, 0, 79.7299, -66.8595, 0, 67.9697, -94.5565, 0, 1.1034, -78.6197, 0, 53.6399, -98.0165, 0, 40.5998, -52.5297, 0, -77.5231, -94.5565, 0, 1.1034, -87.3583, 0, -35.0844, 66.8731, 0, 67.9697, -52.5297, 0, -77.5231, 92.7531, 0, 19.5518, 0, 0, 106.092, 36.1946, 0, 88.4684, 20.6976, 0, 104.054, 36.1946, 0, 88.4684, -52.5297, 0, -77.5231, 66.8731, 0, 67.9697, -52.5297, 0, -77.5231, -78.6197, 0, 53.6399, -94.5565, 0, 1.1034, -52.5297, 0, 79.7299, -18.4416, 0, 93.8496, -40.5998, 0, 98.0165, -52.5297, 0, -77.5231, -52.5297, 0, 79.7299, -78.6197, 0, 53.6399, 0, 0, 106.092, -52.5297, 0, -77.5231, 36.1946, 0, 88.4684, -52.5297, 0, -77.5231, -18.4416, 0, 93.8496, -52.5297, 0, 79.7299, -52.5297, 0, -77.5231, 0, 0, 106.092, -18.4416, 0, 93.8496, -19.3048, -44.8736, -46.1113, -18.4416, 0, -91.6429, -40.5998, 0, -98.0165, -19.3048, -44.8736, -46.1113, -8.4814, -60, -42.9288, -18.4416, 0, -91.6429, -8.4814, -60, -42.9288, 0, 0, -106.092, -18.4416, 0, -91.6429, -8.4814, -60, -42.9288, -0.0686, -60, -43.7574, 0, 0, -106.092, -30.3649, -60, 34.2573, -31.1779, -12.1313, 20.2418, -35.9237, -60, 23.3229, -30.3649, -60, 34.2573, -26.3535, -12.1313, 29.7317, -31.1779, -12.1313, 20.2418, -7.3609, -12.1313, -37.2576, 7.691, -12.1313, -33.9612, -0.0595, -12.1313, -37.9767, 7.691, -12.1313, -33.9612, 21.2938, -12.1313, -28.3267, 14.7699, -12.1313, -31.8138, 21.2938, -12.1313, -28.3267, 31.059, -12.1313, -21.3436, 26.4046, -12.1313, -27.015, 31.059, -12.1313, -21.3436, 36.6472, -12.1313, -7.8523, 34.5175, -12.1313, -14.8731, 36.6472, -12.1313, -7.8523, 36.6472, -12.1313, 6.7505, 37.3664, -12.1313, -0.5509, 36.6472, -12.1313, 6.7505, 31.059, -12.1313, 20.2418, 34.5175, -12.1313, 13.7714, 31.059, -12.1313, 20.2418, 20.7332, -12.1313, 30.5676, 26.4046, -12.1313, 25.9132, 20.7332, -12.1313, 30.5676, 7.2419, -12.1313, 36.1558, 14.2628, -12.1313, 34.0261, 7.2419, -12.1313, 36.1558, -7.3609, -12.1313, 36.1558, -0.0595, -12.1313, 36.875, -14.3817, -12.1313, 34.0261, -26.3535, -12.1313, 29.7317, -20.6353, -12.1313, 34.4245, 7.2419, -12.1313, 36.1558, -14.3817, -12.1313, 34.0261, -7.3609, -12.1313, 36.1558, 31.059, -12.1313, 20.2418, 7.2419, -12.1313, 36.1558, 20.7332, -12.1313, 30.5676, 36.6472, -12.1313, -7.8523, 31.059, -12.1313, 20.2418, 36.6472, -12.1313, 6.7505, 21.2938, -12.1313, -28.3267, 36.6472, -12.1313, -7.8523, 31.059, -12.1313, -21.3436, -7.3609, -12.1313, -37.2576, 21.2938, -12.1313, -28.3267, 7.691, -12.1313, -33.9612, -20.8522, -12.1313, -31.6693, -7.3609, -12.1313, -37.2576, -14.3817, -12.1313, -35.1279, -31.1779, -12.1313, -21.3436, -20.8522, -12.1313, -31.6693, -26.5236, -12.1313, -27.015, -36.7662, -12.1313, -7.8523, -31.1779, -12.1313, -21.3436, -34.6365, -12.1313, -14.8731, -36.7662, -12.1313, 6.7505, -36.7662, -12.1313, -7.8523, -37.4853, -12.1313, -0.5509, -31.1779, -12.1313, 20.2418, -36.7662, -12.1313, 6.7505, -34.6365, -12.1313, 13.7714, -14.3817, -12.1313, 34.0261, -31.1779, -12.1313, 20.2418, -26.3535, -12.1313, 29.7317, 31.059, -12.1313, 20.2418, -14.3817, -12.1313, 34.0261, 7.2419, -12.1313, 36.1558, 21.2938, -12.1313, -28.3267, 31.059, -12.1313, 20.2418, 36.6472, -12.1313, -7.8523, -20.8522, -12.1313, -31.6693, 21.2938, -12.1313, -28.3267, -7.3609, -12.1313, -37.2576, -36.7662, -12.1313, -7.8523, -20.8522, -12.1313, -31.6693, -31.1779, -12.1313, -21.3436, -31.1779, -12.1313, 20.2418, -36.7662, -12.1313, -7.8523, -36.7662, -12.1313, 6.7505, 31.059, -12.1313, 20.2418, -31.1779, -12.1313, 20.2418, -14.3817, -12.1313, 34.0261, -20.8522, -12.1313, -31.6693, 31.059, -12.1313, 20.2418, 21.2938, -12.1313, -28.3267, -31.1779, -12.1313, 20.2418, -20.8522, -12.1313, -31.6693, -36.7662, -12.1313, -7.8523, 31.059, -12.1313, 20.2418, -20.8522, -12.1313, -31.6693, -31.1779, -12.1313, 20.2418, -24.0262, -60, -36.4899, -14.3817, -12.1313, -35.1279, -19.3048, -44.8736, -46.1113, -24.0262, -60, -36.4899, -20.8522, -12.1313, -31.6693, -14.3817, -12.1313, -35.1279, 53.644, -38.172, -11.7317, 37.3664, -12.1313, -0.5509, 43.0541, -60, -0.6347, 53.644, -38.172, -11.7317, 36.6472, -12.1313, -7.8523, 37.3664, -12.1313, -0.5509, -0.602, -38.172, 54.3672, -7.3609, -12.1313, 36.1558, -8.4814, -60, 41.6593, -0.602, -38.172, 54.3672, -0.0595, -12.1313, 36.875, -7.3609, -12.1313, 36.1558, -54.848, -38.172, -11.7317, -34.6365, -12.1313, -14.8731, -39.9087, -60, -17.1371, -54.848, -38.172, -11.7317, -36.7662, -12.1313, -7.8523, -34.6365, -12.1313, -14.8731, 24.5351, -60, -32.6385, 26.4046, -12.1313, -27.015, 34.5365, -44.8736, -35.4016, 24.5351, -60, -32.6385, 21.2938, -12.1313, -28.3267, 26.4046, -12.1313, -27.015, 30.4238, -60, 29.8576, 20.7332, -12.1313, 30.5676, 27.0498, -44.8736, 40.6122, 30.4238, -60, 29.8576, 26.4046, -12.1313, 25.9132, 20.7332, -12.1313, 30.5676, -35.9237, -60, 23.3229, -34.6365, -12.1313, 13.7714, -51.7006, -38.172, 20.2242, -35.9237, -60, 23.3229, -31.1779, -12.1313, 20.2418, -34.6365, -12.1313, 13.7714, -19.3048, -44.8736, -46.1113, -7.3609, -12.1313, -37.2576, -8.4814, -60, -42.9288, -19.3048, -44.8736, -46.1113, -14.3817, -12.1313, -35.1279, -7.3609, -12.1313, -37.2576, 43.0541, -60, -0.6347, 36.6472, -12.1313, 6.7505, 42.2255, -60, 7.7781, 43.0541, -60, -0.6347, 37.3664, -12.1313, -0.5509, 36.6472, -12.1313, 6.7505, -8.4814, -60, 41.6593, -14.3817, -12.1313, 34.0261, -16.5709, -60, 39.2054, -8.4814, -60, 41.6593, -7.3609, -12.1313, 36.1558, -14.3817, -12.1313, 34.0261, -39.9087, -60, -17.1371, -31.1779, -12.1313, -21.3436, -41.4772, -44.8736, -27.9149, -39.9087, -60, -17.1371, -34.6365, -12.1313, -14.8731, -31.1779, -12.1313, -21.3436, 34.5365, -44.8736, -35.4016, 31.059, -12.1313, -21.3436, 35.7866, -60, -24.5924, 34.5365, -44.8736, -35.4016, 26.4046, -12.1313, -27.015, 31.059, -12.1313, -21.3436, 27.0498, -44.8736, 40.6122, 14.2628, -12.1313, 34.0261, 16.4338, -60, 39.2054, 27.0498, -44.8736, 40.6122, 20.7332, -12.1313, 30.5676, 14.2628, -12.1313, 34.0261, -51.7006, -38.172, 20.2242, -36.7662, -12.1313, 6.7505, -42.3626, -60, 7.7781, -51.7006, -38.172, 20.2242, -34.6365, -12.1313, 13.7714, -36.7662, -12.1313, 6.7505, -0.0686, -60, -43.7574, 7.691, -12.1313, -33.9612, 10.8519, -38.172, -50.316, -0.0686, -60, -43.7574, -0.0595, -12.1313, -37.9767, 7.691, -12.1313, -33.9612, -8.4814, -60, -42.9288, -0.0595, -12.1313, -37.9767, -0.0686, -60, -43.7574, -8.4814, -60, -42.9288, -7.3609, -12.1313, -37.2576, -0.0595, -12.1313, -37.9767, 42.2255, -60, 7.7781, 34.5175, -12.1313, 13.7714, 50.4966, -38.172, 20.2242, 42.2255, -60, 7.7781, 36.6472, -12.1313, 6.7505, 34.5175, -12.1313, 13.7714, -16.5709, -60, 39.2054, -20.6353, -12.1313, 34.4245, -27.56, -44.8736, 45.7037, -16.5709, -60, 39.2054, -14.3817, -12.1313, 34.0261, -20.6353, -12.1313, 34.4245, -41.4772, -44.8736, -27.9149, -26.5236, -12.1313, -27.015, -30.5609, -60, -31.1271, -41.4772, -44.8736, -27.9149, -31.1779, -12.1313, -21.3436, -26.5236, -12.1313, -27.015, 35.7866, -60, -24.5924, 34.5175, -12.1313, -14.8731, 45.2463, -44.8736, -19.3734, 35.7866, -60, -24.5924, 31.059, -12.1313, -21.3436, 34.5175, -12.1313, -14.8731, 16.4338, -60, 39.2054, 7.2419, -12.1313, 36.1558, 8.3443, -60, 41.6593, 16.4338, -60, 39.2054, 14.2628, -12.1313, 34.0261, 7.2419, -12.1313, 36.1558, -42.3626, -60, 7.7781, -37.4853, -12.1313, -0.5509, -43.1912, -60, -0.6347, -42.3626, -60, 7.7781, -36.7662, -12.1313, 6.7505, -37.4853, -12.1313, -0.5509, 10.8519, -38.172, -50.316, 14.7699, -12.1313, -31.8138, 17.0181, -60, -36.6564, 10.8519, -38.172, -50.316, 7.691, -12.1313, -33.9612, 14.7699, -12.1313, -31.8138, 50.4966, -38.172, 20.2242, 31.059, -12.1313, 20.2418, 35.7866, -60, 23.3229, 50.4966, -38.172, 20.2242, 34.5175, -12.1313, 13.7714, 31.059, -12.1313, 20.2418, -27.56, -44.8736, 45.7037, -26.3535, -12.1313, 29.7317, -30.3649, -60, 34.2573, -27.56, -44.8736, 45.7037, -20.6353, -12.1313, 34.4245, -26.3535, -12.1313, 29.7317, -30.5609, -60, -31.1271, -20.8522, -12.1313, -31.6693, -24.0262, -60, -36.4899, -30.5609, -60, -31.1271, -26.5236, -12.1313, -27.015, -20.8522, -12.1313, -31.6693, 45.2463, -44.8736, -19.3734, 36.6472, -12.1313, -7.8523, 53.644, -38.172, -11.7317, 45.2463, -44.8736, -19.3734, 34.5175, -12.1313, -14.8731, 36.6472, -12.1313, -7.8523, 8.3443, -60, 41.6593, -0.0595, -12.1313, 36.875, -0.602, -38.172, 54.3672, 8.3443, -60, 41.6593, 7.2419, -12.1313, 36.1558, -0.0595, -12.1313, 36.875, -43.1912, -60, -0.6347, -36.7662, -12.1313, -7.8523, -54.848, -38.172, -11.7317, -43.1912, -60, -0.6347, -37.4853, -12.1313, -0.5509, -36.7662, -12.1313, -7.8523, 17.0181, -60, -36.6564, 21.2938, -12.1313, -28.3267, 24.5351, -60, -32.6385, 17.0181, -60, -36.6564, 14.7699, -12.1313, -31.8138, 21.2938, -12.1313, -28.3267, 35.7866, -60, 23.3229, 26.4046, -12.1313, 25.9132, 30.4238, -60, 29.8576, 35.7866, -60, 23.3229, 31.059, -12.1313, 20.2418, 26.4046, -12.1313, 25.9132)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o1afw"]
+points = PackedVector3Array(6.71185, 0.103074, -16.775, 12.8247, 0.251222, -12.8626, 3.1525, -13.3501, -7.61997, -3.15726, -13.3501, -7.61997, -7.52907, -0.221505, -16.4934, -9.79763, -0.0127516, -9.79507, 18.533, 0.408798, 0.184578, 7.61576, -13.3501, -3.15781, -5.83381, -13.3501, -5.83171, -17.3947, -0.427567, -6.22533, -13.8529, -0.0127516, -0.00205421, 13.3452, 0.315868, 13.4523, 8.24181, -13.3501, -0.00205421, -8.24657, -13.3501, -0.00205421, -17.1133, -0.39255, 8.01966, -9.79763, -0.0127516, 9.79096, -6.84674, -0.136657, 17.8907, 3.1525, -13.3501, 7.61587, 5.82905, -13.3501, 5.82761, -3.15726, -13.3501, 7.61587)
 
 [node name="Start" type="Node3D"]
 
@@ -126,79 +133,358 @@ transform = Transform3D(0.953048, 0, -0.302819, 0, 1, 0, 0.302819, 0, 0.953048, 
 [node name="Bench2" parent="World/Island1/Area10" instance=ExtResource("10_kgbd1")]
 transform = Transform3D(0.466742, 0, -0.884394, 0, 1, 0, 0.884394, 0, 0.466742, 28.5842, 3.8147e-06, 84.7305)
 
-[node name="Race1" type="Node" parent="World/Island1" groups=["games"]]
+[node name="Area11" type="Node3D" parent="World/Island1"]
+transform = Transform3D(0.498397, 0, 0.866949, 0, 1, 0, -0.866949, 0, 0.498397, 2.94097, 0, -2.49849)
+
+[node name="Tree1" parent="World/Island1/Area11" instance=ExtResource("8_1wa8a")]
+transform = Transform3D(-0.581257, 0, 0.81372, 0, 1, 0, -0.81372, 0, -0.581257, 1.09889, 0, 30.0865)
+
+[node name="Tree2" parent="World/Island1/Area11" instance=ExtResource("8_1wa8a")]
+transform = Transform3D(0.523703, 0, 0.8519, 0, 1, 0, -0.8519, 0, 0.523703, -3.49401, 0, 17.4312)
+
+[node name="Tree3" parent="World/Island1/Area11" instance=ExtResource("8_1wa8a")]
+transform = Transform3D(0.975161, 0, 0.221497, 0, 1, 0, -0.221497, 0, 0.975161, 16.1806, -3.8147e-06, 18.2051)
+
+[node name="Tree4" parent="World/Island1/Area11" instance=ExtResource("8_1wa8a")]
+transform = Transform3D(-0.998095, 0, -0.0616931, 0, 1, 0, 0.0616931, 0, -0.998095, 30.6429, -3.8147e-06, 2.8485)
+
+[node name="Bench1" parent="World/Island1/Area11" instance=ExtResource("10_kgbd1")]
+transform = Transform3D(0.379262, 0, -0.925289, 0, 1, 0, 0.925289, 0, 0.379262, 8.38634, 2.72848e-12, 30.3311)
+
+[node name="Bench2" parent="World/Island1/Area11" instance=ExtResource("10_kgbd1")]
+transform = Transform3D(0.466742, 0, -0.884394, 0, 1, 0, 0.884394, 0, 0.466742, 14.0409, 7.6294e-06, 27.8894)
+
+[node name="Bench3" parent="World/Island1/Area11" instance=ExtResource("10_kgbd1")]
+transform = Transform3D(-0.276074, 0, 0.961137, 0, 1, 0, -0.961137, 0, -0.276074, 3.96614, 2.72848e-12, 19.5324)
+
+[node name="Bench4" parent="World/Island1/Area11" instance=ExtResource("10_kgbd1")]
+transform = Transform3D(-0.367492, 0, 0.930027, 0, 1, 0, -0.930027, 0, -0.367492, 8.75974, 7.6294e-06, 17.9361)
+
+[node name="Race1" type="Node3D" parent="World/Island1" groups=["games"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8317, 0, -57.8688)
 script = ExtResource("11_3mknh")
 game_name = "Sweepington guided tour"
 
-[node name="Gate1" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.58049, 0, -0.814267, 0, 1, 0, 0.814267, 0, -0.58049, 33.8427, 2.33773, -57.7468)
+[node name="Applause" type="AudioStreamPlayer3D" parent="World/Island1/Race1"]
+transform = Transform3D(-0.823266, 0, 0.567656, 0, 1, 0, -0.567656, 0, -0.823266, 17.8835, 2.33773, -11.9842)
+stream = ExtResource("10_afnj7")
+bus = &"SFX"
 
-[node name="Gate2" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.946784, 0, -0.321869, 0, 1, 0, 0.321869, 0, -0.946784, 15.6785, 2.33773, -39.8532)
+[node name="Checkpoints" type="Node3D" parent="World/Island1/Race1"]
 
-[node name="Gate3" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.934943, 0, 0.354797, 0, 1, 0, -0.354797, 0, -0.934943, -8.08658, 2.33773, -43.8965)
+[node name="Gate1" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.58049, 0, -0.814267, 0, 1, 0, 0.814267, 0, -0.58049, 0.0110092, 2.33773, 0.122005)
 
-[node name="Gate4" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.644951, 0, 0.764224, 0, 1, 0, -0.764224, 0, -0.644951, -27.5509, 2.33772, -63.7097)
+[node name="Gate2" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.946784, 0, -0.321869, 0, 1, 0, 0.321869, 0, -0.946784, -18.1532, 2.33773, 18.0156)
 
-[node name="Gate5" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.957072, 0, -0.289851, 0, 1, 0, 0.289851, 0, -0.957072, -57.1658, 2.33772, -74.9596)
+[node name="Gate3" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.934943, 0, 0.354797, 0, 1, 0, -0.354797, 0, -0.934943, -41.9183, 2.33773, 13.9723)
 
-[node name="Gate6" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.286641, 0, -0.958038, 0, 1, 0, 0.958038, 0, -0.286641, -78.2962, 2.33772, -58.5628)
+[node name="Gate4" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.644951, 0, 0.764224, 0, 1, 0, -0.764224, 0, -0.644951, -61.3826, 2.33772, -5.8409)
 
-[node name="Gate7" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.116098, 0, -0.993238, 0, 1, 0, 0.993238, 0, -0.116098, -85.4225, 2.33772, -30.1395)
+[node name="Gate5" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.957072, 0, -0.289851, 0, 1, 0, 0.289851, 0, -0.957072, -90.9975, 2.33772, -17.0908)
 
-[node name="Gate8" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.134194, 0, -0.990955, 0, 1, 0, 0.990955, 0, 0.134194, -92.2867, 2.33772, 9.69528)
+[node name="Gate6" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.286641, 0, -0.958038, 0, 1, 0, 0.958038, 0, -0.286641, -112.128, 2.33772, -0.693996)
 
-[node name="Gate9" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.939883, 0, -0.341495, 0, 1, 0, 0.341495, 0, 0.939883, -79.0514, 2.33773, 38.5554)
+[node name="Gate7" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.116098, 0, -0.993238, 0, 1, 0, 0.993238, 0, -0.116098, -119.254, 2.33772, 27.7293)
 
-[node name="Gate10" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.75712, 0, 0.653275, 0, 1, 0, -0.653275, 0, 0.75712, -53.2535, 2.33773, 43.3224)
+[node name="Gate8" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.134194, 0, -0.990955, 0, 1, 0, 0.990955, 0, 0.134194, -126.118, 2.33772, 67.5641)
 
-[node name="Gate11" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.999997, 0, 0.00225183, 0, 1, 0, -0.00225183, 0, 0.999997, -30.5898, 2.33773, 23.8401)
+[node name="Gate9" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.939883, 0, -0.341495, 0, 1, 0, 0.341495, 0, 0.939883, -112.883, 2.33773, 96.4242)
 
-[node name="Gate12" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.948534, 0, -0.316675, 0, 1, 0, 0.316675, 0, 0.948534, 1.75648, 2.33773, 17.3196)
+[node name="Gate10" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.75712, 0, 0.653275, 0, 1, 0, -0.653275, 0, 0.75712, -87.0852, 2.33773, 101.191)
 
-[node name="Gate13" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.164789, 0, -0.986329, 0, 1, 0, 0.986329, 0, -0.164789, 33.5861, 2.33773, 37.7249)
+[node name="Gate11" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.999997, 0, 0.00225183, 0, 1, 0, -0.00225183, 0, 0.999997, -64.4215, 2.33773, 81.7089)
 
-[node name="Gate14" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.164789, 0, -0.986329, 0, 1, 0, 0.986329, 0, -0.164789, 28.9304, 2.33773, 65.5911)
+[node name="Gate12" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.948534, 0, -0.316675, 0, 1, 0, 0.316675, 0, 0.948534, -32.0752, 2.33773, 75.1884)
 
-[node name="Gate15" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.99729, 0, -0.0735686, 0, 1, 0, 0.0735686, 0, 0.99729, 36.4217, 2.33773, 86.5047)
+[node name="Gate13" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.164789, 0, -0.986329, 0, 1, 0, 0.986329, 0, -0.164789, -0.24559, 2.33773, 95.5937)
 
-[node name="Gate16" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.515023, 0, 0.857176, 0, 1, 0, -0.857176, 0, 0.515023, 62.0358, 2.33773, 71.9763)
+[node name="Gate14" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.164789, 0, -0.986329, 0, 1, 0, 0.986329, 0, -0.164789, -4.90129, 2.33773, 123.46)
 
-[node name="Gate17" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.232172, 0, 0.972674, 0, 1, 0, -0.972674, 0, -0.232172, 88.9241, 2.33773, 27.2248)
+[node name="Gate15" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.99729, 0, -0.0735686, 0, 1, 0, 0.0735686, 0, 0.99729, 2.59001, 2.33773, 144.374)
 
-[node name="Gate18" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.0855557, 0, 0.996333, 0, 1, 0, -0.996333, 0, 0.0855557, 83.1695, 2.33773, -25.3635)
+[node name="Gate16" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.515023, 0, 0.857176, 0, 1, 0, -0.857176, 0, 0.515023, 28.2041, 2.33773, 129.845)
 
-[node name="Gate19" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.777629, 0, 0.628723, 0, 1, 0, -0.628723, 0, -0.777629, 77.8677, 2.33773, -46.6608)
+[node name="Gate17" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.232172, 0, 0.972674, 0, 1, 0, -0.972674, 0, -0.232172, 55.0924, 2.33773, 85.0936)
 
-[node name="Gate20" parent="World/Island1/Race1" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.823265, 0, 0.567656, 0, 1, 0, -0.567656, 0, -0.823265, 57.7409, 2.33773, -65.6982)
+[node name="Gate18" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.0855557, 0, 0.996333, 0, 1, 0, -0.996333, 0, 0.0855557, 49.3378, 2.33773, 32.5053)
 
-[node name="Race2" type="Node" parent="World/Island1" groups=["games"]]
+[node name="Gate19" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.777629, 0, 0.628723, 0, 1, 0, -0.628723, 0, -0.777629, 44.036, 2.33773, 11.208)
+
+[node name="Gate20" parent="World/Island1/Race1/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.823265, 0, 0.567656, 0, 1, 0, -0.567656, 0, -0.823265, 23.9092, 2.33773, -7.82939)
+
+[node name="Race2" type="Node3D" parent="World/Island1" groups=["games"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6835, 2.33773, -81.7557)
 script = ExtResource("11_3mknh")
-game_name = "Test race"
+game_name = "Garden Dash"
 
-[node name="Gate1" parent="World/Island1/Race2" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.219148, 0, 0.975691, 0, 1, 0, -0.975691, 0, -0.219148, 34.0772, 2.33773, -79.2696)
+[node name="Applause" type="AudioStreamPlayer3D" parent="World/Island1/Race2"]
+transform = Transform3D(0.978329, 0, 0.207058, 0, 1, 0, -0.207058, 0, 0.978329, -6.74582, -2.05501, 179.392)
+stream = ExtResource("10_afnj7")
+bus = &"SFX"
 
-[node name="Gate2" parent="World/Island1/Race2" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.95264, 0, 0.3041, 0, 1, 0, -0.3041, 0, 0.95264, 42.8774, 2.33773, -85.4615)
+[node name="Checkpoints" type="Node3D" parent="World/Island1/Race2"]
+transform = Transform3D(-0.607099, 0, -0.794626, 0, 1, 0, 0.794626, 0, -0.607099, 0, 0, 0)
+
+[node name="Gate1" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.999231, 0, 0.0392075, 0, 1, 0, -0.0392075, 0, 0.999231, 4.63953, 0, -0.616401)
+
+[node name="Gate2" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.736782, 0, -0.67613, 0, 1, 0, 0.67613, 0, 0.736782, 29.2805, 0, 2.70497)
+
+[node name="Gate3" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.960566, 0, -0.278052, 0, 1, 0, 0.278052, 0, 0.960566, 58.5535, 0, 48.3715)
+
+[node name="Gate4" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.86592, 0, 0.500181, 0, 1, 0, -0.500181, 0, 0.86592, 87.5653, 0, 43.1584)
+
+[node name="Gate5" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.724641, 0, 0.689126, 0, 1, 0, -0.689126, 0, 0.724641, 113.811, 0, 21.7739)
+
+[node name="Gate6" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.0401149, 0, 0.999195, 0, 1, 0, -0.999195, 0, -0.0401149, 140.914, 0, -21.554)
+
+[node name="Gate7" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.998609, 0, 0.0527365, 0, 1, 0, -0.0527365, 0, -0.998609, 121.175, 0, -55.1826)
+
+[node name="Gate8" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.130232, 0, -0.991483, 0, 1, 0, 0.991483, 0, -0.130232, 89.2763, 1.00136e-05, -32.9526)
+
+[node name="Gate9" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.999142, 0, 0.0414219, 0, 1, 0, -0.0414219, 0, -0.999142, 75.8324, 0.91757, -5.76081)
+
+[node name="Gate10" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.818561, 0, 0.57442, 0, 1, 0, -0.57442, 0, -0.818561, 52.5234, 0.91757, -9.63265)
+
+[node name="Gate11" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.195262, 0, 0.980752, 0, 1, 0, -0.980752, 0, -0.195262, 31.3933, 0.91757, -44.3237)
+
+[node name="Gate12" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.654332, 0, 0.756208, 0, 1, 0, -0.756208, 0, 0.654332, 50.776, 0.91757, -75.5734)
+
+[node name="Gate13" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.743145, 0, 0.669131, 0, 1, 0, -0.669131, 0, 0.743145, 100.665, 0.91757, -102.165)
+
+[node name="Gate14" parent="World/Island1/Race2/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.994369, 0, -0.105969, 0, 1, 0, 0.105969, 0, 0.994369, 139.607, -0.219311, -105.172)
+
+[node name="Race3" type="Node3D" parent="World/Island1" groups=["games"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5239, 2.33773, -101.696)
+script = ExtResource("11_3mknh")
+game_name = "Cupid Circuit"
+
+[node name="Applause" type="AudioStreamPlayer3D" parent="World/Island1/Race3"]
+transform = Transform3D(-0.972047, 0, 0.234785, 0, 1, 0, -0.234785, 0, -0.972047, 60.2783, -2.05394, 47.8293)
+stream = ExtResource("10_afnj7")
+bus = &"SFX"
+
+[node name="Checkpoints" type="Node3D" parent="World/Island1/Race3"]
+transform = Transform3D(-0.563944, 0, 0.825812, 0, 1, 0, -0.825812, 0, -0.563944, 0, 0, 0)
+
+[node name="Gate1" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+
+[node name="Gate2" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.900949, 0, 0.433927, 0, 1, 0, -0.433927, 0, 0.900949, 36.9242, 9.29277, -7.02632)
+
+[node name="Gate3" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.335698, 0, 0.94197, 0, 1, 0, -0.94197, 0, 0.335698, 58.2606, 18.901, -39.3041)
+
+[node name="Gate4" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.0187961, 0, 0.999825, 0, 1, 0, -0.999825, 0, -0.0187961, 68.9346, 34.6065, -75.9508)
+
+[node name="Gate5" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.514485, 0, 0.8575, 0, 1, 0, -0.8575, 0, -0.514485, 59.6788, 55.4117, -137.402)
+
+[node name="Gate6" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.820542, 0, 0.571588, 0, 1, 0, -0.571588, 0, -0.820542, 21.8267, 79.3659, -182.537)
+
+[node name="Gate7" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.914791, 0, -0.403929, 0, 1, 0, 0.403929, 0, -0.914791, -35.1224, 110.649, -205.905)
+
+[node name="Gate8" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.914791, 0, -0.403929, 0, 1, 0, 0.403929, 0, -0.914791, -94.6223, 110.649, -180.624)
+
+[node name="Gate9" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.403194, 0, -0.915115, 0, 1, 0, 0.915115, 0, -0.403194, -156.325, 110.649, -128.69)
+
+[node name="Gate10" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.868035, 0, -0.496505, 0, 1, 0, 0.496505, 0, 0.868035, -143.748, 110.649, -52.2783)
+
+[node name="Gate11" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.914298, 0, 0.405047, 0, 1, 0, -0.405047, 0, 0.914298, -79.4733, 110.649, -53.8106)
+
+[node name="Gate12" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.335879, 0, 0.941906, 0, 1, 0, -0.941906, 0, 0.335879, -34.7083, 110.649, -72.7603)
+
+[node name="Gate13" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.68554, 0, 0.728036, 0, 1, 0, -0.728036, 0, -0.68554, -33.4499, 110.649, -94.2095)
+
+[node name="Gate27" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.987563, 0, 0.157228, 0, 1, 0, -0.157228, 0, -0.987563, -50.24, 110.649, -102.84)
+
+[node name="Gate14" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.250803, 0, -0.968039, 0, 1, 0, 0.968039, 0, -0.250803, -74.5182, 110.649, -93.281)
+
+[node name="Gate15" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.239449, 0, -0.97091, 0, 1, 0, 0.97091, 0, 0.239449, -72.6855, 110.649, -32.1418)
+
+[node name="Gate16" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.92689, 0, -0.375335, 0, 1, 0, 0.375335, 0, 0.92689, -54.5365, 110.649, 9.68903)
+
+[node name="Gate17" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.391582, 0, 0.920144, 0, 1, 0, -0.920144, 0, 0.391582, 4.4845, 110.649, -12.0793)
+
+[node name="Gate18" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.259359, 0, 0.965782, 0, 1, 0, -0.965782, 0, -0.259359, 19.9278, 110.649, -69.366)
+
+[node name="Gate19" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.465152, 0, 0.885232, 0, 1, 0, -0.885232, 0, -0.465152, 2.82156, 110.649, -125.843)
+
+[node name="Gate20" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.990651, 0, 0.136424, 0, 1, 0, -0.136424, 0, -0.990651, -30.634, 110.649, -188.366)
+
+[node name="Gate21" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.918116, 0, -0.396316, 0, 1, 0, 0.396316, 0, -0.918116, -101.151, 89.3737, -181.601)
+
+[node name="Gate22" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.579609, 0, -0.814896, 0, 1, 0, 0.814896, 0, -0.579609, -181.693, 64.2217, -146.834)
+
+[node name="Gate23" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.227859, 0, -0.973696, 0, 1, 0, 0.973696, 0, 0.227859, -204.54, 36.0062, -65.3437)
+
+[node name="Gate24" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.803234, 0, -0.595665, 0, 1, 0, 0.595665, 0, 0.803234, -158.425, 9.95197, 14.2228)
+
+[node name="Gate25" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.995885, 0, 0.0906328, 0, 1, 0, -0.0906328, 0, 0.995885, -119.62, 4.07829, 33.0473)
+
+[node name="Gate26" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.864784, 0, 0.502146, 0, 1, 0, -0.502146, 0, 0.864784, -79.5965, 0.26803, 26.9219)
+
+[node name="Race4" type="Node3D" parent="World/Island1" groups=["games"]]
+transform = Transform3D(0.39686, 0, 0.917879, 0, 1, 0, -0.917879, 0, 0.39686, 56.3071, 0, -84.2743)
+script = ExtResource("11_3mknh")
+game_name = "Airborne Excursion"
+
+[node name="Applause" type="AudioStreamPlayer3D" parent="World/Island1/Race4"]
+transform = Transform3D(-0.00324753, 0, 0.999995, 0, 1, 0, -0.999995, 0, -0.00324756, -7.67104, -0.27965, -42.1693)
+stream = ExtResource("10_afnj7")
+bus = &"SFX"
+
+[node name="Checkpoints" type="Node3D" parent="World/Island1/Race4"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
+
+[node name="Gate1" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.13897, 0)
+
+[node name="Gate2" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.944629, 0, -0.328141, 0, 1, 0, 0.328141, 0, 0.944629, 53.6526, 14.238, 5.36077)
+
+[node name="Gate3" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.431692, 0, -0.902021, 0, 1, 0, 0.902021, 0, 0.431692, 94.8066, 33.6736, 43.303)
+
+[node name="Gate4" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.431692, 0, -0.902021, 0, 1, 0, 0.902021, 0, 0.431692, 94.8066, 33.6736, 43.303)
+
+[node name="Gate5" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.990748, 0, -0.135716, 0, 1, 0, 0.135716, 0, 0.990748, 132.001, 18.5314, 71.3332)
+
+[node name="Gate6" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.766258, 0, 0.642533, 0, 1, 0, -0.642533, 0, 0.766258, 174.965, 2.31837, 56.0218)
+
+[node name="Gate7" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.36317, 0, 0.931723, 0, 1, 0, -0.931723, 0, -0.36317, 179.921, -9.79309, 13.6813)
+
+[node name="Gate8" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.998104, 0, 0.0615538, 0, 1, 0, -0.0615538, 0, -0.998104, 143.547, -24.4771, -9.56562)
+
+[node name="Gate9" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.998104, 0, 0.0615538, 0, 1, 0, -0.0615538, 0, -0.998104, 91.9473, -36.4496, -25.8965)
+
+[node name="Gate10" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.996172, 0, -0.0874165, 0, 1, 0, 0.0874165, 0, -0.996172, 33.443, -44.9973, -37.8076)
+
+[node name="Gate11" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.959363, 0, -0.282174, 0, 1, 0, 0.282174, 0, -0.959363, -55.8442, -54.6035, -26.0831)
+
+[node name="Gate12" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.959363, 0, -0.282174, 0, 1, 0, 0.282174, 0, -0.959363, -99.1205, -54.6035, -13.3544)
+
+[node name="Gate13" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.959363, 0, -0.282174, 0, 1, 0, 0.282174, 0, -0.959363, -140.659, -54.6035, -1.13673)
+
+[node name="Gate14" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.956955, 0, 0.290235, 0, 1, 0, -0.290235, 0, -0.956955, -192.582, -42.6922, -14.6097)
+
+[node name="Gate15" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.677428, 0, -0.735589, 0, 1, 0, 0.735589, 0, -0.677428, -235.008, -30.5013, -2.15717)
+
+[node name="Gate16" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.286341, 0, -0.958128, 0, 1, 0, 0.958128, 0, 0.286341, -243.555, -30.5013, 66.9263)
+
+[node name="Gate17" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.64387, 0, -0.765135, 0, 1, 0, 0.765135, 0, 0.64387, -212.258, -30.5013, 103.668)
+
+[node name="Gate18" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.971371, 0, -0.237567, 0, 1, 0, 0.237567, 0, 0.971371, -178.458, -30.5013, 118.823)
+
+[node name="Gate19" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.987642, 0, -0.156728, 0, 1, 0, 0.156728, 0, 0.987642, -147.162, -30.5013, 124.557)
+
+[node name="Gate20" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.750584, 0, 0.660775, 0, 1, 0, -0.660775, 0, 0.750584, -108.769, -30.5013, 120.556)
+
+[node name="Gate21" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.0094944, 0, 0.999955, 0, 1, 0, -0.999955, 0, -0.0094944, -98.5313, -39.6039, 89.757)
+
+[node name="Gate22" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.0094944, 0, 0.999955, 0, 1, 0, -0.999955, 0, -0.0094944, -98.2966, -51.662, 35.0278)
+
+[node name="Gate23" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.18021, 0, 0.983628, 0, 1, 0, -0.983628, 0, -0.18021, -98.7568, -51.662, -13.4386)
+
+[node name="Gate24" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.18021, 0, 0.983628, 0, 1, 0, -0.983628, 0, -0.18021, -107.693, -51.662, -62.2121)
+
+[node name="Gate25" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.335748, 0, 0.941952, 0, 1, 0, -0.941952, 0, 0.335748, -115.081, -36.662, -102.541)
+
+[node name="Gate26" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.761742, 0, 0.647881, 0, 1, 0, -0.647881, 0, 0.761742, -103.33, -21.662, -135.509)
+
+[node name="Gate27" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.996754, 0, -0.0805121, 0, 1, 0, 0.0805121, 0, 0.996754, -68.2899, -6.66201, -165.312)
+
+[node name="Gate28" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.822958, 0, -0.568102, 0, 1, 0, 0.568102, 0, 0.822958, -15.53, 8.33799, -161.05)
+
+[node name="Gate29" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.234972, 0, -0.972002, 0, 1, 0, 0.972002, 0, 0.234972, 2.22575, 8.33799, -131.128)
+
+[node name="Gate30" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.187261, 0, -0.98231, 0, 1, 0, 0.98231, 0, -0.187261, 9.78706, 8.33799, -89.8532)
+
+[node name="Gate31" parent="World/Island1/Race4/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.187261, 0, -0.98231, 0, 1, 0, 0.98231, 0, -0.187261, -4.24334, 2.2217, -49.7355)
 
 [node name="ScoreBoard" parent="World/Island1" instance=ExtResource("13_4mw33")]
 transform = Transform3D(-0.272364, 0, 0.962194, 0, 1, 0, -0.962194, 0, -0.272364, 34.2845, 0, -69.7222)
@@ -213,3 +499,62 @@ broom_scene = ExtResource("14_8bkhc")
 [node name="BroomChange3" parent="World/Island1" instance=ExtResource("12_gt5fk")]
 transform = Transform3D(0.392787, 0, 0.91963, 0, 1, 0, -0.91963, 0, 0.392787, 54.0063, 4.76837e-07, -77.9914)
 broom_scene = ExtResource("15_dffm5")
+
+[node name="Island2" parent="World" instance=ExtResource("15_tftlf")]
+
+[node name="Island4" parent="World" instance=ExtResource("15_tftlf")]
+transform = Transform3D(-0.63901, 0, -0.769199, 0, 1, 0, 0.769199, 0, -0.63901, -37.4942, -32.8046, 140.638)
+
+[node name="Island5" parent="World" instance=ExtResource("15_tftlf")]
+transform = Transform3D(0.931049, 0, -0.364893, 0, 1, 0, 0.364893, 0, 0.931049, 134.404, -32.8046, 58.0081)
+
+[node name="Island6" parent="World" instance=ExtResource("15_tftlf")]
+transform = Transform3D(0.931049, 0, -0.364893, 0, 1, 0, 0.364893, 0, 0.931049, 132.022, 30.5958, -164.352)
+
+[node name="Island7" parent="World" instance=ExtResource("15_tftlf")]
+transform = Transform3D(0.931049, 0, -0.364893, 0, 1, 0, 0.364893, 0, 0.931049, -90.7308, -48.4738, -196.363)
+
+[node name="Island3" type="Node3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8504, -25.2515, -7.17978)
+
+[node name="Island" type="StaticBody3D" parent="World/Island3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Island3/Island"]
+shape = SubResource("ConvexPolygonShape3D_o1afw")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="World/Island3/Island"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24353, 0, 7.13461)
+mesh = ExtResource("15_qopt7")
+skeleton = NodePath("../../..")
+
+[node name="Plushie1" type="MeshInstance3D" parent="World/Island3"]
+transform = Transform3D(4.99764, 0, 3.32018, 0, 6, 0, -3.32018, 0, 4.99764, -3.08059, 0.443573, -0.291914)
+mesh = ExtResource("17_67im3")
+
+[node name="Plushie2" type="MeshInstance3D" parent="World/Island3"]
+transform = Transform3D(-5.96435, 0, 0.653098, 0, 6, 0, -0.653098, 0, -5.96435, -2.57541, 0.443573, 17.7529)
+mesh = ExtResource("17_67im3")
+
+[node name="Plushie3" type="MeshInstance3D" parent="World/Island3"]
+transform = Transform3D(0.268412, 0, 5.99399, 0, 6, 0, -5.99399, 0, 0.268412, -12.7406, 0.443573, 11.4971)
+mesh = ExtResource("17_67im3")
+
+[node name="Plushie4" type="MeshInstance3D" parent="World/Island3"]
+transform = Transform3D(-0.610609, 0, -5.96885, 0, 6, 0, 5.96885, 0, -0.610609, 7.69638, 0.443573, 9.91669)
+mesh = ExtResource("17_67im3")
+
+[node name="Plushie5" type="MeshInstance3D" parent="World/Island3"]
+transform = Transform3D(5.91011, 0, -1.03467, 0, 6, 0, 1.03467, 0, 5.91011, 4.19023, 0.443573, 1.51373)
+mesh = ExtResource("17_67im3")
+
+[node name="Plushie6" type="MeshInstance3D" parent="World/Island3"]
+transform = Transform3D(-3.87459, 0, 4.58122, 0, 6, 0, -4.58122, 0, -3.87459, -8.91813, 0.443573, 15.1102)
+mesh = ExtResource("17_67im3")
+
+[node name="Plushie7" type="MeshInstance3D" parent="World/Island3"]
+transform = Transform3D(4.32273, 0, 4.16101, 0, 6, 0, -4.16101, 0, 4.32273, -10.9328, 0.443573, 3.40825)
+mesh = ExtResource("17_67im3")
+
+[node name="Plushie8" type="MeshInstance3D" parent="World/Island3"]
+transform = Transform3D(-4.55351, 0, -3.90711, 0, 6, 0, 3.90711, 0, -4.55351, 3.7433, 0.443573, 15.4451)
+mesh = ExtResource("17_67im3")

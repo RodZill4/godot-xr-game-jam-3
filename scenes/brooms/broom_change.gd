@@ -1,3 +1,4 @@
+@tool
 extends Area3D
 
 
@@ -12,7 +13,7 @@ func _ready():
 	var broom_visual : Node3D = broom.get_node("Visual")
 	broom.remove_child(broom_visual)
 	broom.free()
-	$BroomPosition.add_child(broom_visual)
+	broom_position.add_child(broom_visual)
 
 func _on_body_entered(body):
 	if body.has_method("set_broom"):

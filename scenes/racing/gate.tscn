@@ -75,7 +75,7 @@ mesh = SubResource("CylinderMesh_asro6")
 skeleton = NodePath("../..")
 
 [node name="DirectionArrow" type="MeshInstance3D" parent="Gate"]
-transform = Transform3D(-0.00163054, -0.0571225, -0.998366, 0.0284856, 0.997959, -0.0571458, 0.999593, -0.0285322, -4.37923e-08, -2.08016, 9.09266e-08, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 0)
 mesh = SubResource("QuadMesh_2qrqp")
 skeleton = NodePath("../../Arrow")
 

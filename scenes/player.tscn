@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfpxva8dtwiqo"]
+[gd_scene load_steps=7 format=3 uid="uid://dfpxva8dtwiqo"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_xr21j"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_32lh2"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_ag7f7"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_h674v"]
+[ext_resource type="AudioStream" uid="uid://br2s3ey164o4a" path="res://assets/sounds/bat hit 8.wav" id="5_fqt1c"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g6y8c"]
 radius = 0.6
 
 [node name="Player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 2049
 script = ExtResource("1_xr21j")
 
@@ -31,10 +32,19 @@ tracker = &"left_hand"
 transform = Transform3D(-1.32121e-08, -1.5299e-08, -0.175, -1.5299e-08, -0.175, 1.5299e-08, -0.175, 1.5299e-08, 1.32121e-08, -0.06, -0.05, 0.17)
 outline_size = 8
 
+[node name="FunctionPickup" parent="Pivot/XR/XROrigin3D/LeftHand" instance=ExtResource("3_h674v")]
+
 [node name="RightHand" type="XRController3D" parent="Pivot/XR/XROrigin3D"]
 tracker = &"right_hand"
 
 [node name="RightHand" parent="Pivot/XR/XROrigin3D/RightHand" instance=ExtResource("3_ag7f7")]
+
+[node name="FunctionPickup" parent="Pivot/XR/XROrigin3D/RightHand" instance=ExtResource("3_h674v")]
+
+[node name="CollisionSound" type="AudioStreamPlayer3D" parent="Pivot/XR/XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.536749)
+stream = ExtResource("5_fqt1c")
+bus = &"SFX"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0708213, 0)

@@ -1,4 +1,5 @@
-extends Node3D
+extends StaticBody3D
+
 
 func _ready():
 	update_scores()

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br2s3ey164o4a"
+path="res://.godot/imported/bat hit 8.wav-12c47996aa25a576884ad5804ce9952a.sample"
+
+[deps]
+
+source_file="res://assets/sounds/bat hit 8.wav"
+dest_files=["res://.godot/imported/bat hit 8.wav-12c47996aa25a576884ad5804ce9952a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

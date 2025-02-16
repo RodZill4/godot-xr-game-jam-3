@@ -183,6 +183,15 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://assets/models/models_Island1.res"
 },
+"models_Island2": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/models/models_Island2.res"
+},
 "models_Path": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -200,6 +209,15 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/path": "res://assets/models/models_Post.res"
+},
+"models_Rock": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/models/models_Rock.res"
 },
 "models_Tree1": {
 "generate/lightmap_uv": 0,
