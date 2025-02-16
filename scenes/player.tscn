@@ -33,6 +33,7 @@ transform = Transform3D(-1.32121e-08, -1.5299e-08, -0.175, -1.5299e-08, -0.175, 
 outline_size = 8
 
 [node name="FunctionPickup" parent="Pivot/XR/XROrigin3D/LeftHand" instance=ExtResource("3_h674v")]
+ranged_angle = 15.0
 
 [node name="RightHand" type="XRController3D" parent="Pivot/XR/XROrigin3D"]
 tracker = &"right_hand"
@@ -40,6 +41,7 @@ tracker = &"right_hand"
 [node name="RightHand" parent="Pivot/XR/XROrigin3D/RightHand" instance=ExtResource("3_ag7f7")]
 
 [node name="FunctionPickup" parent="Pivot/XR/XROrigin3D/RightHand" instance=ExtResource("3_h674v")]
+ranged_angle = 15.0
 
 [node name="CollisionSound" type="AudioStreamPlayer3D" parent="Pivot/XR/XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.536749)

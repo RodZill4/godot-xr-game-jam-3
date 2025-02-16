@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx11h1w44kno3"]
+
+[ext_resource type="Texture2D" uid="uid://dbk8l2xgcpl8o" path="res://assets/smoke_long.png" id="1_i86yt"]
+[ext_resource type="Script" path="res://scenes/smoke.gd" id="2_3yl4a"]
+
+[sub_resource type="Shader" id="Shader_ilngf"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_add, cull_disabled, unshaded, skip_vertex_transform;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform float width = 2.0;
+
+void vertex() {
+	vec3 world_position = (MODEL_MATRIX*vec4(VERTEX, 1.0)).xyz;
+	world_position += (UV.x-0.5)*width*normalize(cross(world_position-CAMERA_POSITION_WORLD, (MODEL_MATRIX*vec4(0.0, 1.0, 0.0, 0.0)).xyz));
+	VERTEX = (VIEW_MATRIX*vec4(world_position, 1.0)).xyz;
+}
+
+void fragment() {
+	vec2 base_uv = UV;
+
+	vec4 albedo_tex = texture(texture_albedo, base_uv);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qbnf"]
+render_priority = 0
+shader = SubResource("Shader_ilngf")
+shader_parameter/albedo = Color(1, 0.756863, 1, 1)
+shader_parameter/width = 3.0
+shader_parameter/texture_albedo = ExtResource("1_i86yt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kev8r"]
+material = SubResource("ShaderMaterial_3qbnf")
+size = Vector2(0, 8)
+
+[node name="Smoke" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_kev8r")
+script = ExtResource("2_3yl4a")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 240.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="queue_free"]

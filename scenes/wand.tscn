@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://b7501io5i7fg4"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_kleow"]
+[ext_resource type="Script" path="res://scenes/wand.gd" id="2_v6nci"]
+[ext_resource type="ArrayMesh" uid="uid://608b6uk5jxws" path="res://assets/models/models_Wand.res" id="3_ngo40"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_y87e6"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_bx7q4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jwxfj"]
+margin = 0.01
+radius = 0.03
+height = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h5nwe"]
+size = Vector3(0.0860291, 0.081665, 0.0258789)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grc3w"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_nl7bg"]
+material = SubResource("StandardMaterial3D_grc3w")
+radius = 0.03
+height = 0.06
+radial_segments = 8
+rings = 4
+
+[node name="Wand" instance=ExtResource("1_kleow")]
+mass = 0.5
+script = ExtResource("2_v6nci")
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150475, 0)
+shape = SubResource("CapsuleShape3D_jwxfj")
+
+[node name="CollisionShape2" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39, 0)
+shape = SubResource("BoxShape3D_h5nwe")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150396, 0)
+mesh = ExtResource("3_ngo40")
+
+[node name="HighlightMeshInstance" type="MeshInstance3D" parent="." index="3"]
+visible = false
+mesh = SubResource("SphereMesh_nl7bg")
+
+[node name="GrabPointHandLeft" parent="." index="4" instance=ExtResource("3_y87e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0159723, 0.0511196, -0.0901817)
+
+[node name="GrabPointHandRight" parent="." index="5" instance=ExtResource("4_bx7q4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0166088, 0.0513341, -0.0897478)
+
+[node name="RespawnTimer" type="Timer" parent="." index="6"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Tip" type="Node3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.365332, 0)
+
+[connection signal="action_pressed" from="." to="." method="_on_action_pressed"]
+[connection signal="action_released" from="." to="." method="_on_action_released"]
+[connection signal="dropped" from="." to="." method="_on_dropped"]
+[connection signal="grabbed" from="." to="." method="_on_grabbed"]
+[connection signal="highlight_updated" from="." to="." method="_on_highlight_updated"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

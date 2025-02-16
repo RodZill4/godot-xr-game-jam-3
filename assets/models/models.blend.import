@@ -192,6 +192,15 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://assets/models/models_Island2.res"
 },
+"models_Mushroom": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/models/models_Mushroom.res"
+},
 "models_Path": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -236,6 +245,15 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/path": "res://assets/models/models_Tree2.res"
+},
+"models_Wand": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/models/models_Wand.res"
 },
 "models_Well": {
 "generate/lightmap_uv": 0,

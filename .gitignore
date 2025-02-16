@@ -1,5 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+/addons/godot-jolt/
 /addons/godot-xr-tools/
 /addons/godotopenxrvendors/

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b00wiwhlu1mbf"]
+[gd_scene load_steps=25 format=3 uid="uid://b00wiwhlu1mbf"]
 
 [ext_resource type="PackedScene" uid="uid://dfpxva8dtwiqo" path="res://scenes/player.tscn" id="1_awy2c"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="4_1x1gt"]
@@ -16,8 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://co3p2gvhunhnc" path="res://scenes/brooms/broom_2.tscn" id="14_8bkhc"]
 [ext_resource type="PackedScene" uid="uid://dnqmle10lwnfn" path="res://scenes/brooms/broom_3.tscn" id="15_dffm5"]
 [ext_resource type="ArrayMesh" uid="uid://dcsul6d5wdqc3" path="res://assets/models/models_Island2.res" id="15_qopt7"]
-[ext_resource type="PackedScene" uid="uid://d3sloa68hieac" path="res://small_island_1.tscn" id="15_tftlf"]
+[ext_resource type="PackedScene" uid="uid://d3sloa68hieac" path="res://scenes/world/small_island_1.tscn" id="15_tftlf"]
 [ext_resource type="ArrayMesh" uid="uid://bm4l0dywrdmwd" path="res://assets/models/godot_plushie_Cube_001.res" id="17_67im3"]
+[ext_resource type="PackedScene" uid="uid://b7501io5i7fg4" path="res://scenes/wand.tscn" id="19_53e4h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wmaqg"]
 sky_top_color = Color(0.233441, 0.450155, 1, 1)
@@ -318,49 +319,64 @@ transform = Transform3D(-0.514485, 0, 0.8575, 0, 1, 0, -0.8575, 0, -0.514485, 59
 transform = Transform3D(-0.820542, 0, 0.571588, 0, 1, 0, -0.571588, 0, -0.820542, 21.8267, 79.3659, -182.537)
 
 [node name="Gate7" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.914791, 0, -0.403929, 0, 1, 0, 0.403929, 0, -0.914791, -35.1224, 110.649, -205.905)
+transform = Transform3D(-0.914791, 0, -0.403929, 0, 1, 0, 0.403929, 0, -0.914791, -33.7731, 110.649, -187.714)
 
 [node name="Gate8" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.914791, 0, -0.403929, 0, 1, 0, 0.403929, 0, -0.914791, -94.6223, 110.649, -180.624)
+transform = Transform3D(-0.914791, 0, -0.403929, 0, 1, 0, 0.403929, 0, -0.914791, -69.0212, 110.649, -172.608)
+
+[node name="Gate28" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.914791, 0, -0.403929, 0, 1, 0, 0.403929, 0, -0.914791, -112.105, 110.649, -154.801)
 
 [node name="Gate9" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.403194, 0, -0.915115, 0, 1, 0, 0.915115, 0, -0.403194, -156.325, 110.649, -128.69)
+transform = Transform3D(-0.432228, 0, -0.901765, 0, 1, 0, 0.901765, 0, -0.432228, -149.264, 110.649, -124.305)
+
+[node name="Gate29" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.0312536, 0, -0.999512, 0, 1, 0, 0.999512, 0, -0.0312536, -160.76, 110.649, -86.6139)
 
 [node name="Gate10" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.868035, 0, -0.496505, 0, 1, 0, 0.496505, 0, 0.868035, -143.748, 110.649, -52.2783)
+transform = Transform3D(0.868035, 0, -0.496505, 0, 1, 0, 0.496505, 0, 0.868035, -143.137, 110.649, -53.1728)
+
+[node name="Gate30" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(0.996514, 0, 0.0834343, 0, 1, 0, -0.0834343, 0, 0.996514, -111.275, 110.649, -42.4718)
 
 [node name="Gate11" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.914298, 0, 0.405047, 0, 1, 0, -0.405047, 0, 0.914298, -79.4733, 110.649, -53.8106)
+transform = Transform3D(0.740137, 0, 0.672459, 0, 1, 0, -0.672459, 0, 0.740137, -79.0661, 110.649, -54.4069)
 
 [node name="Gate12" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.335879, 0, 0.941906, 0, 1, 0, -0.941906, 0, 0.335879, -34.7083, 110.649, -72.7603)
+transform = Transform3D(0.717981, 0, 0.696064, 0, 1, 0, -0.696064, 0, 0.717981, -50.8556, 110.649, -66.0807)
 
 [node name="Gate13" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.68554, 0, 0.728036, 0, 1, 0, -0.728036, 0, -0.68554, -33.4499, 110.649, -94.2095)
+transform = Transform3D(-0.68554, 0, 0.728036, 0, 1, 0, -0.728036, 0, -0.68554, -43.9615, 110.649, -90.0206)
 
 [node name="Gate27" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.987563, 0, 0.157228, 0, 1, 0, -0.157228, 0, -0.987563, -50.24, 110.649, -102.84)
+transform = Transform3D(-0.987563, 0, 0.157228, 0, 1, 0, -0.157228, 0, -0.987563, -63.2786, 110.649, -101.033)
 
 [node name="Gate14" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.250803, 0, -0.968039, 0, 1, 0, 0.968039, 0, -0.250803, -74.5182, 110.649, -93.281)
+transform = Transform3D(-0.110585, 0, -0.993868, 0, 1, 0, 0.993868, 0, -0.110585, -83.2261, 110.649, -80.2094)
 
 [node name="Gate15" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.239449, 0, -0.97091, 0, 1, 0, 0.97091, 0, 0.239449, -72.6855, 110.649, -32.1418)
+transform = Transform3D(0.657771, 0, -0.75322, 0, 1, 0, 0.75322, 0, 0.657771, -66.6378, 110.649, -29.7967)
 
 [node name="Gate16" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.92689, 0, -0.375335, 0, 1, 0, 0.375335, 0, 0.92689, -54.5365, 110.649, 9.68903)
+transform = Transform3D(0.992581, 0, -0.121592, 0, 1, 0, 0.121592, 0, 0.992581, -35.4242, 110.649, -14.8531)
 
 [node name="Gate17" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(0.391582, 0, 0.920144, 0, 1, 0, -0.920144, 0, 0.391582, 4.4845, 110.649, -12.0793)
+transform = Transform3D(0.805546, 0, 0.592534, 0, 1, 0, -0.592534, 0, 0.805546, -6.46151, 110.649, -21.2932)
 
 [node name="Gate18" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.259359, 0, 0.965782, 0, 1, 0, -0.965782, 0, -0.259359, 19.9278, 110.649, -69.366)
+transform = Transform3D(0.217394, 0, 0.976085, 0, 1, 0, -0.976085, 0, 0.217394, 14.3778, 110.649, -52.1505)
+
+[node name="Gate32" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.172222, 0, 0.985059, 0, 1, 0, -0.985059, 0, -0.172222, 17.432, 110.649, -87.3602)
 
 [node name="Gate19" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.465152, 0, 0.885232, 0, 1, 0, -0.885232, 0, -0.465152, 2.82156, 110.649, -125.843)
+transform = Transform3D(-0.465152, 0, 0.885232, 0, 1, 0, -0.885232, 0, -0.465152, 1.2948, 110.649, -125.101)
+
+[node name="Gate33" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
+transform = Transform3D(-0.465152, 0, 0.885232, 0, 1, 0, -0.885232, 0, -0.465152, -18.842, 110.649, -159.676)
 
 [node name="Gate20" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
-transform = Transform3D(-0.990651, 0, 0.136424, 0, 1, 0, -0.136424, 0, -0.990651, -30.634, 110.649, -188.366)
+transform = Transform3D(-0.990651, 0, 0.136424, 0, 1, 0, -0.136424, 0, -0.990651, -39.0804, 110.649, -189.762)
 
 [node name="Gate21" parent="World/Island1/Race3/Checkpoints" instance=ExtResource("12_0k2lk")]
 transform = Transform3D(-0.918116, 0, -0.396316, 0, 1, 0, 0.396316, 0, -0.918116, -101.151, 89.3737, -181.601)
@@ -558,3 +574,7 @@ mesh = ExtResource("17_67im3")
 [node name="Plushie8" type="MeshInstance3D" parent="World/Island3"]
 transform = Transform3D(-4.55351, 0, -3.90711, 0, 6, 0, 3.90711, 0, -4.55351, 3.7433, 0.443573, 15.4451)
 mesh = ExtResource("17_67im3")
+
+[node name="Wand" parent="." instance=ExtResource("19_53e4h")]
+transform = Transform3D(1, 0, 0, 0, 0.00753978, -0.999972, 0, 0.999972, 0.00753978, 34.726, 4.13535, -68.2553)
+linear_damp = 2.0

@@ -28,6 +28,10 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
 games=""
 
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
+
 [rendering]
 
 renderer/rendering_method="mobile"
