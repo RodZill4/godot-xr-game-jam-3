@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b00wiwhlu1mbf"]
+[gd_scene load_steps=26 format=3 uid="uid://b00wiwhlu1mbf"]
 
 [ext_resource type="PackedScene" uid="uid://dfpxva8dtwiqo" path="res://scenes/player.tscn" id="1_awy2c"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="4_1x1gt"]
@@ -18,6 +18,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dcsul6d5wdqc3" path="res://assets/models/models_Island2.res" id="15_qopt7"]
 [ext_resource type="PackedScene" uid="uid://d3sloa68hieac" path="res://scenes/world/small_island_1.tscn" id="15_tftlf"]
 [ext_resource type="ArrayMesh" uid="uid://bm4l0dywrdmwd" path="res://assets/models/godot_plushie_Cube_001.res" id="17_67im3"]
+[ext_resource type="PackedScene" uid="uid://4ffehdprcdk2" path="res://scenes/brooms/broom_4.tscn" id="19_5bkqd"]
 [ext_resource type="PackedScene" uid="uid://b7501io5i7fg4" path="res://scenes/wand.tscn" id="19_53e4h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wmaqg"]
@@ -574,6 +575,10 @@ mesh = ExtResource("17_67im3")
 [node name="Plushie8" type="MeshInstance3D" parent="World/Island3"]
 transform = Transform3D(-4.55351, 0, -3.90711, 0, 6, 0, 3.90711, 0, -4.55351, 3.7433, 0.443573, 15.4451)
 mesh = ExtResource("17_67im3")
+
+[node name="BroomChange" parent="World/Island3" instance=ExtResource("12_gt5fk")]
+transform = Transform3D(0.392787, 0, 0.91963, 0, 1, 0, -0.91963, 0, 0.392787, -1.79522, 0, 6.94976)
+broom_scene = ExtResource("19_5bkqd")
 
 [node name="Wand" parent="." instance=ExtResource("19_53e4h")]
 transform = Transform3D(1, 0, 0, 0, 0.00753978, -0.999972, 0, 0.999972, 0.00753978, 34.726, 4.13535, -68.2553)
