@@ -23,11 +23,11 @@ func _ready():
 	_on_interactable_handle_dropped()
 
 func _on_interactable_handle_grabbed(_pickable = null, _by = null):
-	set_process(true)
+	set_physics_process(true)
 	controlling_hand = _by.get_parent()
 
 func _on_interactable_handle_dropped(_pickable = null):
-	set_process(false)
+	set_physics_process(false)
 	set_rotation(Vector3(-0.8, 0.0, 0.0))
 	controlling_hand = null
 
@@ -35,7 +35,7 @@ func _on_interactable_handle_highlight_updated(pickable, enable):
 	handle_highlight.visible = enable
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(delta):
 	var p = get_parent().to_local(handle.get_global_position())
 	rotation.x = clamp(Vector2(Vector2(p.x, p.y).length(), p.z).angle(), -1.0, -0.4)
 	rotation.z = clamp(Vector2(p.y, -p.x).angle(), -0.5, 0.5)

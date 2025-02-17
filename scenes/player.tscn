@@ -11,6 +11,7 @@ radius = 0.6
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2049
+motion_mode = 1
 script = ExtResource("1_xr21j")
 
 [node name="Pivot" type="Node3D" parent="."]

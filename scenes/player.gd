@@ -8,6 +8,8 @@ var collided_previous_frame : bool = false
 
 func _ready():
 	set_broom(load("res://scenes/brooms/broom_1.tscn").instantiate())
+	process_physics_priority = -200
+
 
 func set_broom(b):
 	if broom:
@@ -27,7 +29,7 @@ func fly_in_tree():
 	if hand:
 		hand.trigger_haptic_pulse("haptic", 50, 5, 0.3, 0.0)
 
-func _process(delta : float):
+func _physics_process(delta : float):
 	# Show FPS on left wrist
 	$Pivot/XR/XROrigin3D/LeftHand/LeftHand/FPS.text = str(Engine.get_frames_per_second())+" FPS"
 	# Player movement
