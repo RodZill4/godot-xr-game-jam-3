@@ -20,8 +20,8 @@ nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
-meshes/create_shadow_meshes=true
-meshes/light_baking=1
+meshes/create_shadow_meshes=false
+meshes/light_baking=0
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
@@ -36,6 +36,14 @@ _subresources={
 "All": {
 "use_external/enabled": true,
 "use_external/path": "res://assets/material.tres"
+},
+"Leaves": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/leaves.tres"
+},
+"Terrain": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/terrain.tres"
 }
 },
 "meshes": {
@@ -246,6 +254,15 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://assets/models/models_Tree1.res"
 },
+"models_Tree1_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/models/models_Tree1_001.res"
+},
 "models_Tree2": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -295,9 +312,9 @@ _subresources={
 }
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
-blender/nodes/punctual_lights=true
-blender/nodes/cameras=true
-blender/nodes/custom_properties=true
+blender/nodes/punctual_lights=false
+blender/nodes/cameras=false
+blender/nodes/custom_properties=false
 blender/nodes/modifiers=1
 blender/meshes/colors=false
 blender/meshes/uvs=true
