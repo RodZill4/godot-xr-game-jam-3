@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://diew5yff042p3"]
+
+[ext_resource type="Texture2D" uid="uid://dbk8l2xgcpl8o" path="res://assets/smoke_long.png" id="1_2jj8w"]
+[ext_resource type="Shader" path="res://assets/smoke.gdshader" id="1_fj00w"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_fj00w")
+shader_parameter/albedo = Color(1, 0.756863, 1, 1)
+shader_parameter/width = 3.0
+shader_parameter/texture_albedo = ExtResource("1_2jj8w")

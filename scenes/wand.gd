@@ -3,6 +3,7 @@ extends XRToolsPickable
 
 var initial_transform : Transform3D
 var last_position : Vector3
+var last_trail = null
 
 
 func _ready():
@@ -28,6 +29,7 @@ func _on_respawn_timer_timeout():
 func _on_action_pressed(pickable):
 	set_process(true)
 	last_position = $Tip.global_position
+	last_trail = null
 
 func _on_action_released(pickable):
 	set_process(false)
@@ -39,6 +41,7 @@ func _process(_delta):
 	if diff.length() > 7:
 		var smoke = preload("res://scenes/smoke.tscn").instantiate()
 		get_parent().add_child(smoke)
-		smoke.place(p, last_position)
+		smoke.place(p, last_position, last_trail)
 		last_position = p
+		last_trail = smoke
 		
