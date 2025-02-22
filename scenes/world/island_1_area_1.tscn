@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://64auyy38xvyj"]
+[gd_scene load_steps=7 format=3 uid="uid://64auyy38xvyj"]
 
-[ext_resource type="PackedScene" uid="uid://bd7xh0wcudbyw" path="res://scenes/world/path.tscn" id="1_20jvo"]
 [ext_resource type="PackedScene" uid="uid://cjo6ti8e5lb5e" path="res://scenes/world/fence.tscn" id="2_iqnuj"]
 [ext_resource type="ArrayMesh" uid="uid://bg4btdlxbbue5" path="res://assets/models/models_FencePost.res" id="3_gi4i4"]
 [ext_resource type="PackedScene" uid="uid://dnyewt2j2dh3n" path="res://scenes/world/tree1.tscn" id="4_f5hwv"]
@@ -10,63 +9,6 @@
 
 [node name="Area1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.798104, 0, 58.6827)
-
-[node name="Paths" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124347, -18.6597)
-
-[node name="Path1" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(-0.142283, 0, 0.989826, 0, 1, 0, -0.989826, 0, -0.142283, 0, 0, -1.95759)
-
-[node name="Path2" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(0.341938, 0, -0.939722, 0, 1, 0, 0.939722, 0, 0.341938, -10.1381, 0, 1.09213)
-
-[node name="Path3" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(-0.661181, 0, 0.750226, 0, 1, 0, -0.750226, 0, -0.661181, -19.1856, 0, 6.34427)
-
-[node name="Path4" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(0.800784, 0, -0.598954, 0, 1, 0, 0.598954, 0, 0.800784, -25.9975, 0, 14.4486)
-
-[node name="Path5" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(0.992868, 0, 0.119219, 0, 1, 0, -0.119219, 0, 0.992868, -24.4356, 0, 32.514)
-
-[node name="Path6" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(-0.947423, 0, -0.319985, 0, 1, 0, 0.319985, 0, -0.947423, -27.2486, 0, 22.3077)
-
-[node name="Path7" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(-0.686846, 0, -0.726802, 0, 1, 0, 0.726802, 0, -0.686846, -20.4991, 0, 40.4664)
-
-[node name="Path8" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(0.52348, 0, 0.852038, 0, 1, 0, -0.852038, 0, 0.52348, -11.8077, 0, 46.5113)
-
-[node name="Path9" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(-0.176586, 0, -0.984285, 0, 1, 0, 0.984285, 0, -0.176586, -2.06915, 0, 50.3328)
-
-[node name="Path10" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(-0.0286893, 0, 0.999588, 0, 1, 0, -0.999588, 0, -0.0286893, 8.51355, 0, 50.63)
-
-[node name="Path11" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(-0.45851, 0, 0.888689, 0, 1, 0, -0.888689, 0, -0.45851, 26.1154, 0, 41.2752)
-
-[node name="Path12" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(0.630757, 0, -0.77598, 0, 1, 0, 0.77598, 0, 0.630757, 17.5346, 0, 47.476)
-
-[node name="Path13" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(0.970004, 0, -0.24309, 0, 1, 0, 0.24309, 0, 0.970004, 32.5688, 0, 34.1096)
-
-[node name="Path14" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(-0.999226, 0, 0.0393295, 0, 1, 0, -0.0393295, 0, -0.999226, 33.5847, 0, 23.5716)
-
-[node name="Path15" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(0.944714, 0, 0.327894, 0, 1, 0, -0.327894, 0, 0.944714, 32.1493, 0, 13.2091)
-
-[node name="Path16" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(-0.857563, 0, -0.51438, 0, 1, 0, 0.51438, 0, -0.857563, 27.2276, 0, 3.83579)
-
-[node name="Path17" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(-0.26559, 0, -0.964086, 0, 1, 0, 0.964086, 0, -0.26559, 9.91586, 0, -1.5587)
-
-[node name="Path18" parent="Paths" instance=ExtResource("1_20jvo")]
-transform = Transform3D(0.062564, 0, 0.998041, 0, 1, 0, -0.998041, 0, 0.062564, 20.4274, 0, -0.297882)
 
 [node name="Fences" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0999298, -18.6597)

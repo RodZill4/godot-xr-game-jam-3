@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://xehm8i8jgj6r"]
+
+[ext_resource type="Shader" path="res://assets/terrain.gdshader" id="1_u2g21"]
+[ext_resource type="Texture2D" uid="uid://di7ipeks43c7a" path="res://assets/terrain_island.png" id="2_2fpkq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_u2g21")
+shader_parameter/grass_color_1 = Color(0.325167, 0.517027, 0.2282, 1)
+shader_parameter/grass_color_2 = Color(0.168666, 0.201934, 0.111607, 1)
+shader_parameter/grass_density = 500.0
+shader_parameter/grass_sharpness = 1.0
+shader_parameter/road_color_1 = Color(0.494007, 0.450442, 0.453605, 1)
+shader_parameter/road_color_2 = Color(0.35182, 0.330092, 0.339004, 1)
+shader_parameter/road_sharpness = 1.0
+shader_parameter/road_density = 181.435
+shader_parameter/max_noise_distance = 100.0
+shader_parameter/map = ExtResource("2_2fpkq")

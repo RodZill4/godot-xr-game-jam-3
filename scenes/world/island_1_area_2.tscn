@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5jrjq21cf0j7"]
+[gd_scene load_steps=5 format=3 uid="uid://b5jrjq21cf0j7"]
 
-[ext_resource type="PackedScene" uid="uid://bd7xh0wcudbyw" path="res://scenes/world/path.tscn" id="1_4ataj"]
 [ext_resource type="PackedScene" uid="uid://cjo6ti8e5lb5e" path="res://scenes/world/fence.tscn" id="2_bpwva"]
 [ext_resource type="ArrayMesh" uid="uid://bg4btdlxbbue5" path="res://assets/models/models_FencePost.res" id="3_14eu2"]
 [ext_resource type="PackedScene" uid="uid://e0iy2vr5jwic" path="res://scenes/world/tree2.tscn" id="4_v0jar"]
@@ -8,38 +7,6 @@
 
 [node name="Area2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 56)
-
-[node name="Paths" type="Node3D" parent="."]
-
-[node name="Path1" parent="Paths" instance=ExtResource("1_4ataj")]
-transform = Transform3D(0.489748, 0, 0.871864, 0, 1, 0, -0.871864, 0, 0.489748, 12.483, 0, -2.86883)
-
-[node name="Path2" parent="Paths" instance=ExtResource("1_4ataj")]
-transform = Transform3D(0.060282, 0, 0.998181, 0, 1, 0, -0.998181, 0, 0.060282, 2.96443, 0, -5.58113)
-
-[node name="Path3" parent="Paths" instance=ExtResource("1_4ataj")]
-transform = Transform3D(-0.321555, 0, 0.946891, 0, 1, 0, -0.946891, 0, -0.321555, -6.86123, 0, -4.25056)
-
-[node name="Path4" parent="Paths" instance=ExtResource("1_4ataj")]
-transform = Transform3D(0.671682, 0, -0.74084, 0, 1, 0, 0.74084, 0, 0.671682, -15.1516, 0, 0.764618)
-
-[node name="Path5" parent="Paths" instance=ExtResource("1_4ataj")]
-transform = Transform3D(-0.993298, 0, -0.115579, 0, 1, 0, 0.115579, 0, -0.993298, -18.07, 0, 8.16695)
-
-[node name="Path6" parent="Paths" instance=ExtResource("1_4ataj")]
-transform = Transform3D(-0.818059, 0, -0.575134, 0, 1, 0, 0.575134, 0, -0.818059, -14.8451, 0, 16.6039)
-
-[node name="Path7" parent="Paths" instance=ExtResource("1_4ataj")]
-transform = Transform3D(-0.493213, 0, -0.869909, 0, 1, 0, 0.869909, 0, -0.493213, -7.72627, 0, 23.0621)
-
-[node name="Path8" parent="Paths" instance=ExtResource("1_4ataj")]
-transform = Transform3D(-0.280382, 0, -0.959889, 0, 1, 0, 0.959889, 0, -0.280382, 1.38987, -1.90735e-06, 26.7604)
-
-[node name="Path9" parent="Paths" instance=ExtResource("1_4ataj")]
-transform = Transform3D(-0.00389197, 0, -0.999992, 0, 1, 0, 0.999992, 0, -0.00389197, 11.02, -1.90735e-06, 28.0176)
-
-[node name="Path10" parent="Paths" instance=ExtResource("1_4ataj")]
-transform = Transform3D(0.33509, 0, -0.942186, 0, 1, 0, 0.942186, 0, 0.33509, 20.5306, -1.90735e-06, 26.3531)
 
 [node name="Fences" type="Node3D" parent="."]
 
