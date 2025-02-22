@@ -1,15 +1,18 @@
 extends CharacterBody3D
 
 
+@export var broom_position : float = 0.7
+
+
 @onready var broom = null
 
 var collided_previous_frame : bool = false
+var vignette : XRToolsVignette = null
 
 
 func _ready():
 	set_broom(load("res://scenes/brooms/broom_1.tscn").instantiate())
 	process_physics_priority = -200
-
 
 func set_broom(b):
 	if broom:
@@ -59,3 +62,12 @@ func _physics_process(delta : float):
 	elif hand and abs(lean_amount) > 0.2:
 		hand.trigger_haptic_pulse("haptic", abs(lean_amount)*50, 10*(abs(lean_amount)-0.2), 0.1, 0.0)
 	collided_previous_frame = collided
+
+func _on_right_hand_button_pressed(name):
+	if name == "by_button":
+		if vignette:
+			vignette.queue_free()
+			vignette = null
+		else:
+			vignette = preload("res://addons/godot-xr-tools/effects/vignette.tscn").instantiate()
+			$Pivot/XR/XROrigin3D/XRCamera3D.add_child(vignette)

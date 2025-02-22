@@ -50,7 +50,8 @@ stream = ExtResource("5_fqt1c")
 bus = &"SFX"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0708213, 0)
 shape = SubResource("SphereShape3D_g6y8c")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="button_pressed" from="Pivot/XR/XROrigin3D/RightHand" to="." method="_on_right_hand_button_pressed"]
