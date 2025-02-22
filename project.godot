@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Sweep Stakes VR"
+config/tags=PackedStringArray("game_jam", "vr")
 run/main_scene="res://scenes/start.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
@@ -36,7 +37,9 @@ games=""
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+lights_and_shadows/directional_shadow/size.mobile=1024
 scaling_3d/fsr_sharpness=0.1
+vrs/mode=2
 scaling_3d/scale.android=0.75
 
 [xr]
